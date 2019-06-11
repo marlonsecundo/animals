@@ -5,7 +5,7 @@
 #include <string>
 using namespace std;
 
-class funcionario{
+class Funcionario{
     private:
         int id = 0;
         string nome;
