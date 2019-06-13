@@ -31,5 +31,16 @@ public:
   string getSangue();
   char getRH();
   string getEspecialidade();
+
+  // Persistencia
+
+  // 1;Mammalia;Leão;Panthera leo;M;2;Carne;0;1;Simba
+  vector<string> getDados();
+
+  void cadastrar(vector<string> dados);
+  void atualizar(vector<string> dados);
+  void deletar();
+  void consultar();
+  void consultar(string tipo);
 };
 #endif

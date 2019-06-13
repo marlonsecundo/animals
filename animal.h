@@ -2,12 +2,14 @@
 #define ANIMAL_H
 #include <iostream>
 #include <string>
+#include <vector>
 #include "veterinario.h"
 #include "tratador.h"
 
 using namespace std;
 
-class Animal : public Tratador, public Veterinario{
+class Animal
+{
 private:
   unsigned int m_id;
   string m_classe, m_nome_cientifico;
@@ -37,6 +39,17 @@ public:
   void set_veterinario(Veterinario novo_veterinario);
   Tratador get_tratador();
   void set_tratador(Tratador novo_tratador);
+
+  // Persistencia
+
+  // id;classe;nome;sexo;tamanho;dieta;batismo;
+  vector<string> getDados();
+
+  void cadastrar(vector<string> dados);
+  void atualizar(vector<string> dados);
+  void deletar();
+  void consultar();
+  void consultar(string tipo);
 
   Animal(unsigned int novo_id, string novo_nome_batismo);
   ~Animal();
