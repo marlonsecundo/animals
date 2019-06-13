@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "Funcionario.h"
+#include "funcionario.h"
 using namespace std;
 
 class Veterinario : public Funcionario{

@@ -1,84 +1,84 @@
 #include "animal.h"
 
-Animal::Animal(unsigned int novoId, string novoNomeBatismo)
+Animal::Animal(unsigned int novo_id, string novo_nome_batismo)
 {
-  this->id = novoId;
-  this->nomeBatismo = novoNomeBatismo;
+  this->m_id = novo_id;
+  this->m_nome_batismo = novo_nome_batismo;
 }
 
 Animal::~Animal()
 {
 }
 
-int Animal::getId()
+int Animal::get_id()
 {
-  return this->id;
+  return this->m_id;
 }
-void Animal::setId(unsigned int novoId)
+void Animal::set_id(unsigned int novo_id)
 {
-  this->id = novoId;
+  this->m_id = novo_id;
 }
-string Animal::getClasse()
+string Animal::get_classe()
 {
-  return this->classe;
+  return this->m_classe;
 }
-void Animal::setClasse(string novaClasse)
+void Animal::set_classe(string nova_classe)
 {
-  this->classe = novaClasse;
+  this->m_classe = nova_classe;
 }
-string Animal::getNomeCientifico()
+string Animal::get_nome_cientifico()
 {
-  return this->nomeCientifico;
+  return this->m_nome_cientifico;
 }
-void Animal::setNomeCientifico(string novoNomeCientifico)
+void Animal::set_nome_cientifico(string novo_nome_cientifico)
 {
-  this->nomeCientifico = novoNomeCientifico;
+  this->m_nome_cientifico = novo_nome_cientifico;
 }
-char Animal::getSexo()
+char Animal::get_sexo()
 {
-  return this->sexo;
+  return this->m_sexo;
 }
-void Animal::setSexo(char novoSexo)
+void Animal::set_sexo(char novo_sexo)
 {
-  this->sexo = novoSexo;
+  this->m_sexo = novo_sexo;
 }
-double Animal::getTamanho()
+double Animal::get_tamanho()
 {
-  return this->tamanho;
+  return this->m_tamanho;
 }
-void Animal::setTamanho(double novoTamanho)
+void Animal::set_tamanho(double novo_tamanho)
 {
-  this->tamanho = novoTamanho;
+  this->m_tamanho = novo_tamanho;
 }
-string Animal::getDieta()
+string Animal::get_dieta()
 {
-  return this->dieta;
+  return this->m_dieta;
 }
-void Animal::setDieta(string novaDieta)
+void Animal::set_dieta(string nova_dieta)
 {
-  this->dieta = novaDieta;
+  this->m_dieta = nova_dieta;
 }
-string Animal::getNomeBatismo()
+string Animal::get_nome_batismo()
 {
-  return this->nomeBatismo;
+  return this->m_nome_batismo;
 }
-void Animal::setNomeBatismo(string novoNomeBatismo)
+void Animal::set_nome_batismo(string novo_nome_batismo)
 {
-  this->nomeBatismo = novoNomeBatismo;
+  this->m_nome_batismo = novo_nome_batismo;
 }
-veterinario Animal::getVeterinario()
+Veterinario Animal::get_veterinario()
 {
-  return this->Veterinario;
+  return this->m_veterinario;
 }
-void Animal::setVeterinario(veterinario novoVeterinario)
+void Animal::set_veterinario(Veterinario novo_veterinario)
 {
-  this->Veterinario = novoVeterinario;
+  this->m_veterinario = novo_veterinario;
 }
-tratador Animal::getTratador()
+Tratador Animal::get_tratador()
 {
-  return this->Tratador;
+  return this->m_tratador;
 }
-void Animal::setTratador(tratador novoTratador)
+void Animal::set_tratador(Tratador novo_tratador)
 {
-  this->Tratador = novoTratador;
+  this->m_tratador = novo_tratador;
 }
