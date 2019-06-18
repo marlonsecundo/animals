@@ -45,8 +45,8 @@ public:
   // id;classe;nome;sexo;tamanho;dieta;batismo;
   vector<string> getDados();
 
-  void cadastrar(vector<string> dados);
-  void atualizar(vector<string> dados);
+  void cadastrar();
+  void atualizar();
   void deletar();
   void consultar();
   void consultar(string tipo);
