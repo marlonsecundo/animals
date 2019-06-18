@@ -3,11 +3,14 @@
 #define ANFIBIO_H
 
 #include <string>
+#include <vector>
 #include "animal.h"
 
 using std::cin;
 using std::cout;
 using std::endl;
+using std::string;
+using std::vector;
 
 typedef struct date
 {
@@ -32,7 +35,8 @@ public:
 
   int get_total_mudas();
   Date get_data_ultima_muda();
-
+  vector<string> getDados();
+  
   ~Anfibio();
 };
 
