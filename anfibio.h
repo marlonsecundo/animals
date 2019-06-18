@@ -19,6 +19,11 @@ typedef struct date
   int mes;
   int ano;
 
+  string toString()
+  {
+    return to_string(dia) + "/" + to_string(mes) + "/" + to_string(ano);
+  }
+
 } Date;
 
 class Anfibio : public Animal

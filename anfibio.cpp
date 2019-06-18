@@ -35,7 +35,7 @@ Date Anfibio::get_data_ultima_muda()
 vector<string> Anfibio::getDados()
 {
     vector<string> dados;
-    //id;classe;nome;sexo;tamanho;dieta;batismo;
+    //id;classe;nome;sexo;tamanho;dieta;batismo; Data_ultima_muda (nesse caso)
     dados.push_back(to_string(get_id()));
     dados.push_back(get_classe());
     dados.push_back(get_nome_cientifico());
@@ -43,6 +43,7 @@ vector<string> Anfibio::getDados()
     dados.push_back(to_string(get_tamanho()));
     dados.push_back(get_dieta());
     dados.push_back(get_nome_batismo());
+    dados.push_back(get_data_ultima_muda().toString);
     return dados;
 }
 
