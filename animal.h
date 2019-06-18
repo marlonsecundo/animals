@@ -1,12 +1,11 @@
 #ifndef ANIMAL_H
 #define ANIMAL_H
+
 #include <iostream>
 #include <string>
 #include <vector>
 #include "veterinario.h"
 #include "tratador.h"
-
-using namespace std;
 
 class Animal
 {

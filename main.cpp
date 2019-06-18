@@ -1,10 +1,10 @@
-#include "animal.h"
+#include "interface.h"
 
 int main(int argc, char const *argv[])
 {
-  Animal animal(1, "nemal");
+  Interface interface;
 
-  animal.cadastrar();
+  interface.iniciar();
 
   return 0;
 }
