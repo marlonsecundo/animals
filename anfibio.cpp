@@ -10,12 +10,12 @@ Anfibio::Anfibio(unsigned int novoId, string novoNomeBatismo) : Animal(novoId, n
 {
 }
 
-int Anfibio::set_total_mudas(int total_mudas)
+void Anfibio::set_total_mudas(int total_mudas)
 {
   this->m_total_de_mudas = total_mudas;
 }
 
-Date Anfibio::set_ultima_muda(Date ultima_muda)
+void Anfibio::set_ultima_muda(Date ultima_muda)
 {
   this->m_ultima_muda.dia = ultima_muda.dia;
   this->m_ultima_muda.mes = ultima_muda.mes;
@@ -32,7 +32,7 @@ Date Anfibio::get_data_ultima_muda()
   return m_ultima_muda;
 }
 
-vector<string> Anfibio::getDados()
+vector<string> Anfibio::get_dados()
 {
   vector<string> dados;
   //id;classe;nome;sexo;tamanho;dieta;batismo;

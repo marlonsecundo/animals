@@ -13,7 +13,7 @@ string Mamifero::get_cor_pelo()
 {
   return m_cor_pelo;
 }
-vector<string> Mamifero::getDados()
+vector<string> Mamifero::get_dados()
 {
   vector<string> dados;
   //id;classe;nome;sexo;tamanho;dieta;batismo;

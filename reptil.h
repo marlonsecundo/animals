@@ -18,12 +18,13 @@ protected:
 
 public:
   Reptil();
-  bool set_venenoso(bool venenoso);
-  string set_tipo_venenoso(string tipo_veneno);
+  void set_venenoso(bool venenoso);
+  void set_tipo_venenoso(string tipo_veneno);
 
   bool get_venenoso();
   string get_tipo_venenoso();
 
+  Reptil(unsigned int novo_id, string novo_nome_batismo);
   ~Reptil();
 };
 

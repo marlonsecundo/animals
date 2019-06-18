@@ -43,7 +43,7 @@ public:
   // Persistencia
 
   // id;classe;nome;sexo;tamanho;dieta;batismo;
-  vector<string> getDados();
+  vector<string> get_dados();
 
   void cadastrar();
   void atualizar();
