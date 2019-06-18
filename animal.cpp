@@ -91,9 +91,18 @@ void Animal::set_tratador(Tratador novo_tratador)
 
 void Animal::cadastrar()
 {
-  // vector<string> dados = get_dados();
+  vector<string> dados = get_dados();
+
   std::ofstream arquivo;
 
-  arquivo.open("animal.txt");
-  arquivo << "sdmfisf";
+  arquivo.open("animal.txt", std::ios::app);
+
+  for (int i = 0; i < dados.size(); i++)
+  {
+    arquivo << dados[i] << ";";
+  }
+
+  arquivo << "\n";
+
+  arquivo.close();
 }
