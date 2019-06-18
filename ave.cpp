@@ -4,12 +4,12 @@ Ave::Ave(unsigned int novoId, string novoNomeBatismo) : Animal(novoId, novoNomeB
 {
 }
 
-double Ave::set_tamanho_do_bico_cm(double tamanho_do_bico_cm)
+void Ave::set_tamanho_do_bico_cm(double tamanho_do_bico_cm)
 {
   this->m_tamanho_do_bico_cm = tamanho_do_bico_cm;
 }
 
-double Ave::set_envergadura_das_asas(double envergadura_das_asas)
+void Ave::set_envergadura_das_asas(double envergadura_das_asas)
 {
   this->m_envergadura_das_asas = envergadura_das_asas;
 }

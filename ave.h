@@ -17,8 +17,8 @@ protected:
 
 public:
   Ave(unsigned int novoId, string novoNomeBatismo);
-  double set_tamanho_do_bico_cm(double tamanho_do_bico_cm);
-  double set_envergadura_das_asas(double envergadura_das_asas);
+  void set_tamanho_do_bico_cm(double tamanho_do_bico_cm);
+  void set_envergadura_das_asas(double envergadura_das_asas);
 
   double get_tamanho_do_bico_cm();
   double get_envergadura_das_asas();

@@ -30,13 +30,13 @@ protected:
 
 public:
   Anfibio(unsigned int novoId, string novoNomeBatismo);
-  int set_total_mudas(int total_mudas);
-  Date set_ultima_muda(Date data_ultima_muda);
+  void set_total_mudas(int total_mudas);
+  void set_ultima_muda(Date data_ultima_muda);
 
   int get_total_mudas();
   Date get_data_ultima_muda();
-  vector<string> getDados();
-  
+  vector<string> get_dados();
+
   ~Anfibio();
 };
 
