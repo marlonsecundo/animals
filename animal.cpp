@@ -89,6 +89,13 @@ void Animal::set_tratador(Tratador novo_tratador)
   this->m_tratador = novo_tratador;
 }
 
+vector<string> Animal::get_dados()
+{
+  vector<string> dados;
+
+  return dados;
+}
+
 void Animal::cadastrar()
 {
   vector<string> dados = get_dados();
