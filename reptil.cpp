@@ -27,7 +27,8 @@ bool Reptil::get_venenoso()
 
   return m_venenoso;
 }
-vector<string> Ave::get_dados()
+
+vector<string> Reptil::get_dados()
 {
   vector<string> dados;
   //id;classe;nome;sexo;tamanho;dieta;batismo;tamanho_das_asas;tamanho_do_bico_cm
@@ -38,8 +39,8 @@ vector<string> Ave::get_dados()
   dados.push_back(to_string(get_tamanho()));
   dados.push_back(get_dieta());
   dados.push_back(get_nome_batismo());
-  dados.push(to_string(get_venenoso()));
-  dados.push(get_tipo_venenoso());
+  dados.push_back(to_string(get_venenoso()));
+  dados.push_back(get_tipo_venenoso());
   return dados;
 }
 
