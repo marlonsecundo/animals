@@ -1,8 +1,12 @@
-#ifndef INTERFACE_H
-#define INTERFACE_H
+#ifndef ENTRADA_H
+#define ENTRADA_H
 
-class Interface
+#include "animal.h"
+#include <vector>
+
+class Entrada
 {
+private:
 public:
   void cadastrar_animal();
   void atualizar_animal();
