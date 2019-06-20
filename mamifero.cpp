@@ -1,6 +1,6 @@
 #include "mamifero.h"
 
-Mamifero::Mamifero(unsigned int novoId, string novoNomeBatismo) : Animal(novoId, novoNomeBatismo)
+Mamifero::Mamifero(vector<string> dados) : Animal(stoi(dados[0]), dados[1])
 {
 }
 

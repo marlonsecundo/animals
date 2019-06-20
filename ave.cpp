@@ -1,6 +1,6 @@
 #include "ave.h"
 
-Ave::Ave(unsigned int novoId, string novoNomeBatismo) : Animal(novoId, novoNomeBatismo)
+Ave::Ave(vector<string> dados) : Animal(stoi(dados[0]), dados[1])
 {
 }
 
