@@ -1,12 +1,11 @@
 #ifndef ANIMAL_H
 #define ANIMAL_H
+
 #include <iostream>
 #include <string>
 #include <vector>
 #include "veterinario.h"
 #include "tratador.h"
-
-using namespace std;
 
 class Animal
 {
@@ -43,10 +42,10 @@ public:
   // Persistencia
 
   // id;classe;nome;sexo;tamanho;dieta;batismo;
-  vector<string> getDados();
+  vector<string> get_dados();
 
-  void cadastrar(vector<string> dados);
-  void atualizar(vector<string> dados);
+  void cadastrar();
+  void atualizar();
   void deletar();
   void consultar();
   void consultar(string tipo);

@@ -24,7 +24,7 @@ public:
   void set_cor_pelo(string cor_pelo);
 
   string get_cor_pelo();
-  vector<string> getDados();
+  vector<string> get_dados();
   vector<string> atualizar();
   
   ~Mamifero();

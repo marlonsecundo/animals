@@ -1,4 +1,5 @@
 #include "animal.h"
+#include <fstream>
 
 Animal::Animal(unsigned int novo_id, string novo_nome_batismo)
 {
@@ -62,23 +63,53 @@ string Animal::get_nome_batismo()
 {
   return this->m_nome_batismo;
 }
+
 void Animal::set_nome_batismo(string novo_nome_batismo)
 {
   this->m_nome_batismo = novo_nome_batismo;
 }
+
 Veterinario Animal::get_veterinario()
 {
   return this->m_veterinario;
 }
+
 void Animal::set_veterinario(Veterinario novo_veterinario)
 {
   this->m_veterinario = novo_veterinario;
 }
+
 Tratador Animal::get_tratador()
 {
   return this->m_tratador;
 }
+
 void Animal::set_tratador(Tratador novo_tratador)
 {
   this->m_tratador = novo_tratador;
+}
+
+vector<string> Animal::get_dados()
+{
+  vector<string> dados;
+
+  return dados;
+}
+
+void Animal::cadastrar()
+{
+  vector<string> dados = get_dados();
+
+  std::ofstream arquivo;
+
+  arquivo.open("animal.txt", std::ios::app);
+
+  for (int i = 0; i < dados.size(); i++)
+  {
+    arquivo << dados[i] << ";";
+  }
+
+  arquivo << "\n";
+
+  arquivo.close();
 }

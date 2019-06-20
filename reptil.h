@@ -4,6 +4,7 @@
 
 #include <string>
 #include "animal.h"
+#include <vector>
 
 using std::cin;
 using std::cout;
@@ -17,10 +18,12 @@ protected:
   string m_tipo_venenoso;
 
 public:
-  Reptil();
-  bool set_venenoso(bool venenoso);
-  string set_tipo_venenoso(string tipo_veneno);
-
+  Reptil(unsigned int novo_id, string novo_nome_batismo);
+  void set_venenoso(bool venenoso);
+  void set_tipo_venenoso(string tipo_veneno);
+  
+  vector<string> get_dados();  // id;classe;nome;sexo;tamanho;dieta;batismo;
+  
   bool get_venenoso();
   string get_tipo_venenoso();
 
