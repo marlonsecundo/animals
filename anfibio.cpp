@@ -6,7 +6,7 @@ using std::cout;
 using std::endl;
 using std::string;
 
-Anfibio::Anfibio(unsigned int novoId, string novoNomeBatismo) : Animal(novoId, novoNomeBatismo)
+Anfibio::Anfibio(vector<string> dados) : Animal(stoi(dados[0]), dados[1])
 {
 }
 

@@ -19,14 +19,14 @@ protected:
   string m_cor_pelo;
 
 public:
-  Mamifero(unsigned int novoId, string novoNomeBatismo);
+  Mamifero(vector<string> dados);
 
   void set_cor_pelo(string cor_pelo);
 
   string get_cor_pelo();
   vector<string> get_dados();
   vector<string> atualizar();
-  
+
   ~Mamifero();
 };
 
