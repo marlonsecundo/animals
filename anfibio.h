@@ -34,7 +34,7 @@ protected:
   Date m_ultima_muda;
 
 public:
-  Anfibio(unsigned int novoId, string novoNomeBatismo);
+  Anfibio(vector<string> dados);
   void set_total_mudas(int total_mudas);
   void set_ultima_muda(Date data_ultima_muda);
 

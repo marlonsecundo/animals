@@ -3,9 +3,9 @@ using namespace std;
 
 void Tratador::setSegur(int novoSegur)
 {
-    this->nivel_de_seguranca = novoSegur;
+    this->m_nivel_de_seguranca = novoSegur;
 }
 int Tratador::getSegur()
 {
-    return this->nivel_de_seguranca;
+    return this->m_nivel_de_seguranca;
 }

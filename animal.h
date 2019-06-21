@@ -17,8 +17,8 @@ private:
 
 public:
   string m_dieta, m_nome_batismo;
-  Veterinario m_veterinario;
-  Tratador m_tratador;
+  string m_veterinario;
+  string m_tratador;
 
   int get_id();
   void set_id(unsigned int novo_id);
@@ -35,20 +35,22 @@ public:
   string get_nome_batismo();
   void set_nome_batismo(string novo_nome_batismo);
   Veterinario get_veterinario();
-  void set_veterinario(Veterinario novo_veterinario);
+  void set_veterinario(string novo_veterinario);
   Tratador get_tratador();
-  void set_tratador(Tratador novo_tratador);
+  void set_tratador(string novo_tratador);
 
   // Persistencia
 
-  // id;classe;nome;sexo;tamanho;dieta;batismo;
+  // id;classe;nome;sexo;tamanho;dieta;m_veterinario;m_tratador;batismo;
   vector<string> get_dados();
 
   void cadastrar();
   void atualizar();
   void deletar();
-  void consultar();
-  void consultar(string tipo);
+  string consultar(string id);
+  vector<string> consultarTipo(string tipo);
+  vector<string> consutarVeterinario(string veterinario);
+  vector<string> consutarTratador(string tratador);
 
   Animal(unsigned int novo_id, string novo_nome_batismo);
   ~Animal();

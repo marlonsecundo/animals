@@ -1,7 +1,7 @@
 #include "reptil.h"
 #include "animal.h"
 
-Reptil::Reptil(unsigned int novo_id, string novo_nome_batismo) : Animal(novo_id, novo_nome_batismo)
+Reptil::Reptil(vector<string> dados) : Animal(stoi(dados[0]), dados[1])
 {
 }
 
