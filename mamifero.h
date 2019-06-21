@@ -28,14 +28,9 @@ public:
 
   string get_cor_pelo();
   vector<string> get_dados();
-<<<<<<< HEAD
   
   void atualizar();
   
-=======
-  vector<string> atualizar();
-
->>>>>>> 09db33fe1ad53e94519b7c79dbc68e748aae3691
   ~Mamifero();
 };
 
