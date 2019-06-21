@@ -77,6 +77,25 @@ void Animal::set_tratador(string novo_tratador)
 {
   this->m_tratador = novo_tratador;
 }
+
+void Animal::cadastrar()
+{
+  vector<string> dados = get_dados();
+
+  std::ofstream arquivo;
+
+  arquivo.open("animal.txt", std::ios::app);
+
+  for (int i = 0; i < dados.size(); i++)
+  {
+    arquivo << dados[i] << ";";
+  }
+
+  arquivo << "\n";
+
+  arquivo.close();
+}
+
 string Animal::consultar(string id)
 {
   ifstream animal("animal.txt");
@@ -88,17 +107,17 @@ string Animal::consultar(string id)
   {
     cout << "Erro na abertura do aquivo -> animal.txt" << endl;
   }
-  while(!animal.eof())
+  while (!animal.eof())
   {
     int t_id = 0;
     getline(animal, aux);
-    while(aux3 != ';')
+    while (aux3 != ';')
     {
       aux3 = getchar();
       t_id++;
     }
     aux2 = aux.substr(0, t_id);
-    if(id.compare(aux2) == 0)
+    if (id.compare(aux2) == 0)
     {
       return aux;
     }
@@ -109,33 +128,33 @@ vector<string> Animal::consultarTipo(string tipo)
 {
   ifstream animal("animal.txt");
   string aux;
-  vector <string> consulta;
+  vector<string> consulta;
   char aux3;
 
   if (!animal)
   {
     cout << "Erro na abertura do aquivo -> animal.txt" << endl;
   }
-  while(!animal.eof())
+  while (!animal.eof())
   {
     int i = 0;
     int t_id = 0;
     int t_tipo = 0;
     getline(animal, aux);
-    while(aux3 != ';')
+    while (aux3 != ';')
     {
       aux3 = getchar();
       t_id++;
     }
     aux3 = getchar();
-    while(aux3 != ';')
+    while (aux3 != ';')
     {
       aux3 = getchar();
       t_tipo++;
     }
 
-    consulta[i] = aux.substr((t_id-2), (t_id + t_tipo-2));
-    if(tipo.compare(consulta[i]) == 0)
+    consulta[i] = aux.substr((t_id - 2), (t_id + t_tipo - 2));
+    if (tipo.compare(consulta[i]) == 0)
     {
       consulta.push_back(aux);
     }
