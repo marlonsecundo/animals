@@ -8,7 +8,7 @@ using namespace std;
 
 class Tratador : public Funcionario{
   private:
-    int nivel_de_seguranca;
+    int m_nivel_de_seguranca;
   public:
     void setSegur(int novoSegur);
     int getSegur();

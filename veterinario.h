@@ -8,7 +8,7 @@ using namespace std;
 
 class Veterinario : public Funcionario{
   private:
-    string crmv;
+    string m_crmv;
   public:
     void setCRMV(string novoCRMV);
     string getCRMV();

@@ -3,9 +3,9 @@ using namespace std;
 
 void Veterinario::setCRMV(string novoCRMV)
 {
-    this->crmv = novoCRMV;
+    this->m_crmv = novoCRMV;
 }
 string Veterinario::getCRMV()
 {
-    return this->crmv;
+    return this->m_crmv;
 }

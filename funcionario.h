@@ -9,13 +9,13 @@ using namespace std;
 class Funcionario
 {
 private:
-  int id;
-  string nome;
-  string cpf;
-  int idade;
-  string tipo_sanguineo;
-  char fator_rh;
-  string especialidade;
+  int m_id;
+  string m_nome;
+  string m_cpf;
+  int m_idade;
+  string m_tipo_sanguineo;
+  char m_fator_rh;
+  string m_especialidade;
 
 public:
   void setId(int novoId);
@@ -41,7 +41,6 @@ public:
   void cadastrar(vector<string> dados);
   void atualizar(vector<string> dados);
   void deletar();
-  void consultar();
-  void consultar(string tipo);
+  vector<string> consultar(string id);
 };
 #endif
