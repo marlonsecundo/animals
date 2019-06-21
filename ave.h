@@ -5,10 +5,12 @@
 #include <string>
 #include "animal.h"
 #include <vector>
+#include <map>
 
 using std::cin;
 using std::cout;
 using std::endl;
+using std::map;
 
 class Ave : public Animal
 {
@@ -17,7 +19,7 @@ protected:
   double m_envergadura_das_asas;
 
 public:
-  Ave(vector<string> dados);
+  Ave(map<string, string> dados);
 
   void set_tamanho_do_bico_cm(double tamanho_do_bico_cm);
   void set_envergadura_das_asas(double envergadura_das_asas);

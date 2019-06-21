@@ -5,8 +5,8 @@
 #include <string>
 #include <vector>
 
-#include <animal.h>
-#include <funcionario.h>
+#include "animal.h"
+#include "funcionario.h"
 
 class Gerenciador
 {

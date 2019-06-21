@@ -1,6 +1,5 @@
 #include "animal_exotico.h"
 
-
 Animal_Exotico::Animal_Exotico(vector<string> dados) : Animal(stoi(dados[0]), dados[1])
 {
 }
@@ -10,8 +9,7 @@ void Animal_Exotico::set_pais_origem(string pais_origem)
   this->m_pais_origem = pais_origem;
 }
 
-
-string Animal_Exotico::get_origem()
+string Animal_Exotico::get_pais_origem()
 {
   return m_pais_origem;
 }
