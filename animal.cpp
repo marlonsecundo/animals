@@ -78,6 +78,12 @@ void Animal::set_tratador(string novo_tratador)
   this->m_tratador = novo_tratador;
 }
 
+vector<string> Animal::get_dados()
+{
+  vector<string> dados;
+  return dados;
+}
+
 void Animal::cadastrar()
 {
   vector<string> dados = get_dados();
@@ -119,11 +125,14 @@ string Animal::consultar(string id)
     aux2 = aux.substr(0, t_id);
     if (id.compare(aux2) == 0)
     {
+      animal.close();
       return aux;
     }
   }
   animal.close();
+  return "Animal nao encontrado";
 }
+
 vector<string> Animal::consultarTipo(string tipo)
 {
   ifstream animal("animal.txt");

@@ -1,7 +1,14 @@
 #include "ave.h"
 
-Ave::Ave(vector<string> dados) : Animal(stoi(dados[0]), dados[1])
+Ave::Ave(map<string, string> dados) : Animal(stoi(dados["id"]), dados["batismo"])
 {
+  set_classe(dados["classe"]);
+  set_nome_cientifico(dados["nome"]);
+  set_sexo(dados["sexo"][0]);
+  set_tamanho(stod(dados["tamanho"]));
+  set_dieta(dados["dieta"]);
+  set_envergadura_das_asas(stod(dados["envergadura_das_asas"]));
+  set_tamanho_do_bico_cm(stod(dados["tamanho_do_bico"]));
 }
 
 void Ave::set_tamanho_do_bico_cm(double tamanho_do_bico_cm)
