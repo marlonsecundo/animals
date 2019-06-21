@@ -1,6 +1,9 @@
 #include "gerenciador.h"
 #include "mamifero.h"
-void Gerenciador::addMamifero(vector<string> dados)
+#include <map>
+
+void Gerenciador::addMamifero(map<string, string> dados)
 {
-  Mamifero mam();
+  Mamifero mam(dados);
+  mam.cadastrar();
 }

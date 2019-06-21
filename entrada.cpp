@@ -1,7 +1,9 @@
-#include <iostream>
 #include "entrada.h"
+
+#include <iostream>
 #include <stdio.h>
 #include <string.h>
+#include <map>
 
 using std::cin;
 using std::cout;
@@ -25,6 +27,7 @@ vector<string> split(string str, string sep)
 void Entrada::cadastrar_animal()
 {
   vector<string> dados;
+  map<string, string> dadosAnim;
   string input;
 
   cout << "[--- Cadastrar Animal ---]" << endl;
@@ -33,6 +36,24 @@ void Entrada::cadastrar_animal()
   getline(cin, input);
 
   dados = split(input, ";");
+
+  dadosAnim = {{"id", dados[0]},
+               {"classe", dados[1]},
+               {"nome", dados[2]},
+               {"tamanho", dados[3]},
+               {"dieta", dados[4]},
+               {"veterinario", dados[5]},
+               {"tratador", dados[6]},
+               {"batismo", dados[7]}};
+
+  if (dados[1].compare("MAMIFERO") == 0)
+  {
+    dadosAnim.insert(pair("cor_pelo", dados[8]));
+    m_gerenciador.addMamifero(dadosAnim);
+  }
+  else if (dados[1].compare("AVE") == 0)
+  {
+  }
 }
 
 void Entrada::iniciar()
