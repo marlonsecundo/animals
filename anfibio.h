@@ -42,5 +42,6 @@ public:
   Date get_data_ultima_muda();
   vector<string> get_dados();
 
+}
 
 #endif // ANFIBIO_H
