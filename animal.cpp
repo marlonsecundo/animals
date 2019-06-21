@@ -1,6 +1,6 @@
 #include "animal.h"
 #include <fstream>
-
+using namespace std;
 Animal::Animal(unsigned int novo_id, string novo_nome_batismo)
 {
   this->m_id = novo_id;
@@ -63,53 +63,84 @@ string Animal::get_nome_batismo()
 {
   return this->m_nome_batismo;
 }
-
 void Animal::set_nome_batismo(string novo_nome_batismo)
 {
   this->m_nome_batismo = novo_nome_batismo;
 }
 
-Veterinario Animal::get_veterinario()
-{
-  return this->m_veterinario;
-}
-
-void Animal::set_veterinario(Veterinario novo_veterinario)
+void Animal::set_veterinario(string novo_veterinario)
 {
   this->m_veterinario = novo_veterinario;
 }
 
-Tratador Animal::get_tratador()
-{
-  return this->m_tratador;
-}
-
-void Animal::set_tratador(Tratador novo_tratador)
+void Animal::set_tratador(string novo_tratador)
 {
   this->m_tratador = novo_tratador;
 }
-
-vector<string> Animal::get_dados()
+string Animal::consultar(string id)
 {
-  vector<string> dados;
+  ifstream animal("animal.txt");
+  string aux;
+  string aux2;
+  char aux3;
 
-  return dados;
-}
-
-void Animal::cadastrar()
-{
-  vector<string> dados = get_dados();
-
-  std::ofstream arquivo;
-
-  arquivo.open("animal.txt", std::ios::app);
-
-  for (int i = 0; i < dados.size(); i++)
+  if (!animal)
   {
-    arquivo << dados[i] << ";";
+    cout << "Erro na abertura do aquivo -> animal.txt" << endl;
   }
+  while(!animal.eof())
+  {
+    int t_id = 0;
+    getline(animal, aux);
+    while(aux3 != ';')
+    {
+      aux3 = getchar();
+      t_id++;
+    }
+    aux2 = aux.substr(0, t_id);
+    if(id.compare(aux2) == 0)
+    {
+      return aux;
+    }
+  }
+  animal.close();
+}
+vector<string> Animal::consultarTipo(string tipo)
+{
+  ifstream animal("animal.txt");
+  string aux;
+  vector <string> consulta;
+  char aux3;
 
-  arquivo << "\n";
+  if (!animal)
+  {
+    cout << "Erro na abertura do aquivo -> animal.txt" << endl;
+  }
+  while(!animal.eof())
+  {
+    int i = 0;
+    int t_id = 0;
+    int t_tipo = 0;
+    getline(animal, aux);
+    while(aux3 != ';')
+    {
+      aux3 = getchar();
+      t_id++;
+    }
+    aux3 = getchar();
+    while(aux3 != ';')
+    {
+      aux3 = getchar();
+      t_tipo++;
+    }
 
-  arquivo.close();
+    consulta[i] = aux.substr((t_id-2), (t_id + t_tipo-2));
+    if(tipo.compare(consulta[i]) == 0)
+    {
+      consulta.push_back(aux);
+    }
+    i++;
+  }
+  animal.close();
+  return consulta;
 }

@@ -21,7 +21,7 @@ void Interface::iniciar()
     cout << "[---    Animais    ---]" << endl;
     cout << "1 - Cadastrar Animal" << endl;
     cout << "[---               ---]" << endl;
-    cout << "Digite uma opção: ";
+    cout << "Digite uma opcao: ";
     cin >> opcao;
 
     switch (opcao)
