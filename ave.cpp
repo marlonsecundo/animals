@@ -1,6 +1,6 @@
 #include "ave.h"
 
-Ave::Ave(unsigned int novoId, string novoNomeBatismo) : Animal(novoId, novoNomeBatismo)
+Ave::Ave(vector<string> dados) : Animal(stoi(dados[0]), dados[1])
 {
 }
 
@@ -23,6 +23,7 @@ double Ave::get_tamanho_do_bico_cm()
 {
   return m_tamanho_do_bico_cm;
 }
+
 vector<string> Ave::get_dados()
 {
   vector<string> dados;
@@ -34,8 +35,8 @@ vector<string> Ave::get_dados()
   dados.push_back(to_string(get_tamanho()));
   dados.push_back(get_dieta());
   dados.push_back(get_nome_batismo());
-  dados.push(to_string(get_envergadura_das_asas()));
-  dados.push(to_string(get_tamanho_do_bico_cm()));
+  dados.push_back(to_string(get_envergadura_das_asas()));
+  dados.push_back(to_string(get_tamanho_do_bico_cm()));
   return dados;
 }
 

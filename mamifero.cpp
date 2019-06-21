@@ -1,6 +1,6 @@
 #include "mamifero.h"
 
-Mamifero::Mamifero(unsigned int novoId, string novoNomeBatismo) : Animal(novoId, novoNomeBatismo)
+Mamifero::Mamifero(vector<string> dados) : Animal(stoi(dados[0]), dados[1])
 {
 }
 
@@ -13,6 +13,7 @@ string Mamifero::get_cor_pelo()
 {
   return m_cor_pelo;
 }
+<<<<<<< HEAD
 
 vector<string> Mamifero::get_dados()
 {
@@ -53,6 +54,24 @@ void Mamifero::atualizar()
   }
 
 }
+=======
+
+vector<string> Mamifero::get_dados()
+{
+  vector<string> dados;
+  //id;classe;nome;sexo;tamanho;dieta;batismo;corPelo (nesse caso)
+  dados.push_back(to_string(get_id()));
+  dados.push_back(get_classe());
+  dados.push_back(get_nome_cientifico());
+  dados.push_back(to_string(get_sexo()));
+  dados.push_back(to_string(get_tamanho()));
+  dados.push_back(get_dieta());
+  dados.push_back(get_nome_batismo());
+  dados.push_back(get_cor_pelo());
+  return dados;
+}
+
+>>>>>>> 09db33fe1ad53e94519b7c79dbc68e748aae3691
 Mamifero::~Mamifero()
 {
 }
