@@ -3,10 +3,13 @@
 
 #include "animal.h"
 #include <vector>
+#include "gerenciador.h"
 
 class Entrada
 {
 private:
+  Gerenciador m_gerenciador;
+
 public:
   void cadastrar_animal();
   void atualizar_animal();

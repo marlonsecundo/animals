@@ -15,6 +15,6 @@ private:
   vector<Funcionario> m_funcionarios;
 
 public:
-  void addMamifero(vector<string> dados);
+  void addMamifero(map<string, string> dados);
 };
 #endif

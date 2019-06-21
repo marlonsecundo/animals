@@ -9,6 +9,8 @@ Ave::Ave(map<string, string> dados) : Animal(stoi(dados["id"]), dados["batismo"]
   set_dieta(dados["dieta"]);
   set_envergadura_das_asas(stod(dados["envergadura_das_asas"]));
   set_tamanho_do_bico_cm(stod(dados["tamanho_do_bico"]));
+  set_veterinario(dados["veterinario"]);
+  set_tratador(dados["tratador"]);
 }
 
 void Ave::set_tamanho_do_bico_cm(double tamanho_do_bico_cm)
@@ -34,13 +36,15 @@ double Ave::get_tamanho_do_bico_cm()
 vector<string> Ave::get_dados()
 {
   vector<string> dados;
-  //id;classe;nome;sexo;tamanho;dieta;batismo;tamanho_das_asas;tamanho_do_bico_cm
+  //id;classe;nome;sexo;tamanho;dieta;m_veterinario;m_tratador;batismo;tamanho_das_asas;tamanho_do_bico_cm
   dados.push_back(to_string(get_id()));
   dados.push_back(get_classe());
   dados.push_back(get_nome_cientifico());
   dados.push_back(to_string(get_sexo()));
   dados.push_back(to_string(get_tamanho()));
   dados.push_back(get_dieta());
+  dados.push_back(m_veterinario);
+  dados.push_back(m_tratador);
   dados.push_back(get_nome_batismo());
   dados.push_back(to_string(get_envergadura_das_asas()));
   dados.push_back(to_string(get_tamanho_do_bico_cm()));
