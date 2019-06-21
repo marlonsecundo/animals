@@ -1,5 +1,5 @@
 #include "reptil.h"
-#include "animal.h"
+
 
 Reptil::Reptil(vector<string> dados) : Animal(stoi(dados[0]), dados[1])
 {
