@@ -1,4 +1,4 @@
-#include "reptilNativo.h"
+#include "reptil_nativo.h"
 
 ReptilNativo::ReptilNativo(map<string, string> dados) : Reptil(dados)
 {
