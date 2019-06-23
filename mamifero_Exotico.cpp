@@ -1,4 +1,4 @@
-#include "mamifero_Exotico.h"
+#include "mamifero_exotico.h"
 
 MamiferoExotico::MamiferoExotico(map<string, string> dados) : Mamifero(dados) 
 {

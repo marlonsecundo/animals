@@ -1,4 +1,4 @@
-#include "reptil_Exotico.h"
+#include "reptil_exotico.h"
 
 ReptilExotico::ReptilExotico(map<string, string> dados) : Reptil(dados)
 {

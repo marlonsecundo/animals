@@ -1,4 +1,4 @@
-#include "ave_Exotica.h"
+#include "ave_exotica.h"
 
 AveExotica::AveExotica(map<string, string> dados) : Ave(dados)
 {

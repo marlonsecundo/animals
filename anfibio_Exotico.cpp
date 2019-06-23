@@ -1,4 +1,4 @@
-#include "anfibio_Exotico.h"
+#include "anfibio_exotico.h"
 
 AnfibioExotico::AnfibioExotico(map<string, string> dados) : Anfibio(dados)
 {
