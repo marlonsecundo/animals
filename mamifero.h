@@ -4,6 +4,8 @@
 
 #include <string>
 #include <vector>
+#include <fstream>
+#include <cstring>
 #include "animal.h"
 
 using std::cin;
@@ -11,6 +13,7 @@ using std::cout;
 using std::endl;
 using std::string;
 using std::vector;
+using std::ifstream;
 
 class Mamifero : public Animal
 {
@@ -25,8 +28,9 @@ public:
 
   string get_cor_pelo();
   vector<string> get_dados();
-  vector<string> atualizar();
-
+  
+  void atualizar();
+  
   ~Mamifero();
 };
 

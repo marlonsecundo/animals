@@ -41,6 +41,11 @@ public:
   int get_total_mudas();
   Date get_data_ultima_muda();
   vector<string> get_dados();
+<<<<<<< HEAD
+
+}
+=======
 };
+>>>>>>> 09db33fe1ad53e94519b7c79dbc68e748aae3691
 
 #endif // ANFIBIO_H
