@@ -17,7 +17,7 @@ public:
   void cadastrar_animal();
   void atualizar_animal();
   void consultar_animal();
-  int deletar_animal(unsigned int m_id);
+  void deletar_animal();
   void iniciar();
 };
 
