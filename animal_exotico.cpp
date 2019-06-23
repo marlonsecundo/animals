@@ -1,7 +1,15 @@
 #include "animal_exotico.h"
 
-Animal_Exotico::Animal_Exotico(vector<string> dados) : Animal(stoi(dados[0]), dados[1])
+Animal_Exotico::Animal_Exotico(map<string, string> dados) : Animal(stoi(dados["id"]), dados["batismo"])
 {
+  set_classe(dados["classe"]);
+  set_nome_cientifico(dados["nome"]);
+  set_sexo(dados["sexo"][0]);
+  set_tamanho(stod(dados["tamanho"]));
+  set_dieta(dados["dieta"]);
+  set_pais_origem(dados["pais_origem"]);
+  set_veterinario(dados["veterinario"]);
+  set_tratador(dados["tratador"]);
 }
 
 void Animal_Exotico::set_pais_origem(string pais_origem)

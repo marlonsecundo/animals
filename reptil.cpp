@@ -1,8 +1,16 @@
 #include "reptil.h"
 
-
-Reptil::Reptil(vector<string> dados) : Animal(stoi(dados[0]), dados[1])
+Reptil::Reptil(map<string, string> dados) : Animal(stoi(dados["id"]), dados["batismo"])
 {
+  set_classe(dados["classe"]);
+  set_nome_cientifico(dados["nome"]);
+  set_sexo(dados["sexo"][0]);
+  set_tamanho(stod(dados["tamanho"]));
+  set_dieta(dados["dieta"]);
+  set_venenoso(stod(dados["envergadura_das_asas"]));
+  set_tipo_venenoso(dados["tipo_venenoso"]);
+  set_veterinario(dados["veterinario"]);
+  set_tratador(dados["tratador"]);
 }
 
 void Reptil::set_venenoso(bool venenoso)

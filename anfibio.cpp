@@ -6,8 +6,17 @@ using std::cout;
 using std::endl;
 using std::string;
 
-Anfibio::Anfibio(vector<string> dados) : Animal(stoi(dados[0]), dados[1])
+Anfibio::Anfibio(map<string, string> dados) : Animal(stoi(dados["id"]), dados["batismo"])
 {
+  set_classe(dados["classe"]);
+  set_nome_cientifico(dados["nome"]);
+  set_sexo(dados["sexo"][0]);
+  set_tamanho(stod(dados["tamanho"]));
+  set_dieta(dados["dieta"]);
+  set_total_mudas(stod(dados["total_mudas"]));
+  set_data_string(dados["ultima_muda"]);
+  set_veterinario(dados["veterinario"]);
+  set_tratador(dados["tratador"]);
 }
 
 void Anfibio::set_total_mudas(int total_mudas)
@@ -35,7 +44,7 @@ Date Anfibio::get_data_ultima_muda()
 vector<string> Anfibio::get_dados()
 {
   vector<string> dados;
-  //id;classe;nome;sexo;tamanho;dieta;batismo; Data_ultima_muda (nesse caso)
+  //id;classe;nome;sexo;tamanho;dieta;batismo;Data_ultima_muda
   dados.push_back(to_string(get_id()));
   dados.push_back(get_classe());
   dados.push_back(get_nome_cientifico());
@@ -45,4 +54,16 @@ vector<string> Anfibio::get_dados()
   dados.push_back(get_nome_batismo());
   dados.push_back(get_data_ultima_muda().toString());
   return dados;
+}
+
+void Anfibio::set_data_string(string d) // xx/xx/xxxx
+{
+  int dia, mes, ano;
+  dia = stoi(d.substr(0, 2));
+  mes = stoi(d.substr(3, 2));
+  ano = stoi(d.substr(6, 4));
+
+  m_ultima_muda.dia = dia;
+  m_ultima_muda.mes = mes;
+  m_ultima_muda.ano = ano;
 }

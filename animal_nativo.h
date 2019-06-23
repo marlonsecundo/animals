@@ -5,6 +5,7 @@
 #include <string>
 #include "animal.h"
 #include <vector>
+#include <map>
 
 using std::cin;
 using std::cout;
@@ -17,7 +18,7 @@ protected:
   string m_uf_origem;
   string m_autorizacao;
 private:
-  Animal_Nativo(vector<string> dados);
+  Animal_Nativo(map<string, string> dados);
   void set_uf_origem(string uf_origem);
   void set_autorizacao(string autorizacao);
 

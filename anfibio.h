@@ -4,6 +4,7 @@
 
 #include <string>
 #include <vector>
+#include <map>
 #include "animal.h"
 
 using std::cin;
@@ -11,6 +12,7 @@ using std::cout;
 using std::endl;
 using std::string;
 using std::vector;
+using std::map;
 
 typedef struct date
 {
@@ -23,6 +25,7 @@ typedef struct date
   {
     return to_string(dia) + "/" + to_string(mes) + "/" + to_string(ano);
   }
+  
 
 } Date;
 
@@ -34,18 +37,15 @@ protected:
   Date m_ultima_muda;
 
 public:
-  Anfibio(vector<string> dados);
+  Anfibio(map<string, string> dados);
   void set_total_mudas(int total_mudas);
   void set_ultima_muda(Date data_ultima_muda);
+  void set_data_string(string d);
 
   int get_total_mudas();
+  string get_data();
   Date get_data_ultima_muda();
   vector<string> get_dados();
-<<<<<<< HEAD
-
-}
-=======
 };
->>>>>>> 09db33fe1ad53e94519b7c79dbc68e748aae3691
 
 #endif // ANFIBIO_H

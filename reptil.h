@@ -5,10 +5,11 @@
 #include <string>
 #include "animal.h"
 #include <vector>
+#include <map>
 
-using std::cin;
-using std::cout;
-using std::endl;
+using std::vector;
+using std::string;
+using std::map;
 
 class Reptil : public Animal
 {
@@ -18,7 +19,7 @@ protected:
   string m_tipo_venenoso;
 
 public:
-  Reptil(vector<string> dados);
+  Reptil(map<string, string> dados);
   void set_venenoso(bool venenoso);
   void set_tipo_venenoso(string tipo_veneno);
 

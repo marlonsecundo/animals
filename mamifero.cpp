@@ -1,7 +1,15 @@
 #include "mamifero.h"
 
-Mamifero::Mamifero(vector<string> dados) : Animal(stoi(dados[0]), dados[1])
+Mamifero::Mamifero(map<string, string> dados) : Animal(stoi(dados["id"]), dados["batismo"])
 {
+  set_classe(dados["classe"]);
+  set_nome_cientifico(dados["nome"]);
+  set_sexo(dados["sexo"][0]);
+  set_tamanho(stod(dados["tamanho"]));
+  set_dieta(dados["dieta"]);
+  set_cor_pelo(dados["cor_do_pelo"]);
+  set_veterinario(dados["veterinario"]);
+  set_tratador(dados["tratador"]);
 }
 
 void Mamifero::set_cor_pelo(string cor_pelo)
@@ -51,8 +59,8 @@ void Mamifero::atualizar()
   }else {
     cout << "Erro ao abrir o arquivo. " << endl;
   }
-
 }
+
 Mamifero::~Mamifero()
 {
 }

@@ -5,6 +5,7 @@
 #include <string>
 #include "animal.h"
 #include <vector>
+#include <map>
 
 using std::cin;
 using std::cout;
@@ -16,7 +17,7 @@ class Animal_Exotico : public Animal
 protected:
   string m_pais_origem;
 private:
-  Animal_Exotico(vector<string> dados);
+  Animal_Exotico(map<string, string> dados);
   void set_pais_origem(string pais_origem);
   
   vector<string> get_dados(); // id;classe;nome;sexo;tamanho;dieta;batismo;pais_origem;
