@@ -18,5 +18,7 @@ private:
 public:
   void addMamifero(map<string, string> dados);
   void addAve(map<string, string> dados);
+  void addAnfibio(map<string, string> dados);
+  void addReptil(map<string, string> dados);
 };
 #endif
