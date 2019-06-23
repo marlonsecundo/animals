@@ -42,7 +42,7 @@ public:
   // Persistencia
 
   // id;classe;nome;sexo;tamanho;dieta;m_veterinario;m_tratador;batismo;
-  vector<string> get_dados();
+  virtual vector<string> get_dados() = 0;
 
   void cadastrar();
   void atualizar();
