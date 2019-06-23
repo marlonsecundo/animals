@@ -34,7 +34,8 @@ void Entrada::cadastrar_animal()
   cout << "ANIMAL   : id;classe;nome;tamanho;dieta;veterinario;tratador;batismo;" << endl;
   cout << "MAMIFERO : cor do pelo;" << endl;
   cout << "AVE      : evergadura das asas; tamanho do bico;" << endl;
-  // Falta Colocar os Outros Animais
+  cout << "ANFIBIO  : total de mudas; data da ultima muda;" << endl;
+  cout << "REPTIL   : venenoso; tipo de veneno;" << endl;
   cout << "Digite os dados do animal separados por ;" << endl;
   getline(cin, input);
   getline(cin, input);
@@ -61,7 +62,18 @@ void Entrada::cadastrar_animal()
     dadosAnim.insert(pair<string, string>("tamanho_do_bico", dados[9]));
     m_gerenciador.addAve(dadosAnim);
   }
-  // Falta Colocar os Outros Animais
+  else if (dados[1].compare("ANFIBIO") == 0)
+  {
+    dadosAnim.insert(pair<string, string>("total_de_mudas", dados[8]));
+    dadosAnim.insert(pair<string, string>("ultima_muda", dados[9]));
+    m_gerenciador.addAnfibio(dadosAnim);
+  }
+  else if (dados[1].compare("REPTIL") == 0)
+  {
+    dadosAnim.insert(pair<string, string>("venenoso", dados[8]));
+    dadosAnim.insert(pair<string, string>("tipo_veneno", dados[9]));
+    m_gerenciador.addReptil(dadosAnim);
+  }
 }
 
 void Entrada::iniciar()
