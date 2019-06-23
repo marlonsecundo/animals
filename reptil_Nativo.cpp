@@ -1,6 +1,6 @@
-#include "reptilExotico.h"
+#include "reptil_Nativo.h"
 
-ReptilExotico::ReptilExotico(map<string, string> dados) : Reptil(dados)
+ReptilNativo::ReptilNativo(map<string, string> dados) : Reptil(dados)
 {
   set_classe(dados["classe"]);
   set_nome_cientifico(dados["nome"]);
@@ -13,6 +13,6 @@ ReptilExotico::ReptilExotico(map<string, string> dados) : Reptil(dados)
   set_tratador(dados["tratador"]);
 }
 
-ReptilExotico::~ReptilExotico()
+ReptilNativo::~ReptilNativo()
 {
 }

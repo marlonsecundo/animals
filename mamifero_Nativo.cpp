@@ -1,6 +1,6 @@
-#include "mamiferoExotico.h"
+#include "mamifero_Nativo.h"
 
-MamiferoExotico::MamiferoExotico(map<string, string> dados) : Mamifero(dados) 
+MamiferoNativo::MamiferoNativo(map<string, string> dados) : Mamifero(dados) 
 {
   set_classe(dados["classe"]);
   set_nome_cientifico(dados["nome"]);
@@ -12,7 +12,7 @@ MamiferoExotico::MamiferoExotico(map<string, string> dados) : Mamifero(dados)
   set_tratador(dados["tratador"]);
 }
 
-MamiferoExotico::~MamiferoExotico() {
+MamiferoNativo::~MamiferoNativo() {
 
 }
 
