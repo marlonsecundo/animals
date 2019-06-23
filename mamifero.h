@@ -5,6 +5,9 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <fstream>
+#include <cstring>
+
 #include "animal.h"
 
 using std::cin;
@@ -13,6 +16,7 @@ using std::endl;
 using std::string;
 using std::vector;
 using std::map;
+using std::ifstream;
 
 class Mamifero : public Animal
 {
