@@ -78,12 +78,6 @@ void Animal::set_tratador(string novo_tratador)
   this->m_tratador = novo_tratador;
 }
 
-vector<string> Animal::get_dados()
-{
-  vector<string> dados;
-  return dados;
-}
-
 int Animal::deletar()
 {
   ifstream tabela_animais("animais.txt");

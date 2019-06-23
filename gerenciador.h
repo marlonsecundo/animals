@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <map>
 
 #include "animal.h"
 #include "funcionario.h"
@@ -16,5 +17,6 @@ private:
 
 public:
   void addMamifero(map<string, string> dados);
+  void addAve(map<string, string> dados);
 };
 #endif
