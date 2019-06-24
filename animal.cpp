@@ -134,27 +134,23 @@ string Animal::consultar(string id)
   ifstream animal("animal.txt");
   string aux;
   string aux2;
-  char aux3;
+  char aux3 = ' ';
 
-  cout << "asd";
-
-  if (!animal)
-  {
-    cout << "Erro na abertura do aquivo -> animal.txt" << endl;
-  }
-  while (!animal.eof())
+  while (getline(animal, aux))
   {
     int t_id = 0;
-    getline(animal, aux);
+    int it = 0;
+
     while (aux3 != ';')
     {
-      aux3 = getchar();
+      aux3 = aux[it];
       t_id++;
+      it++;
     }
-    aux2 = aux.substr(0, t_id - 1);
-    if (id.compare(aux2) == 0)
+    aux3 = aux[it - 2];
+
+    if (id[0] == aux3)
     {
-      animal.close();
       return aux;
     }
   }
