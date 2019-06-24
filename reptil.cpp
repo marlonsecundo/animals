@@ -9,6 +9,7 @@ Reptil::Reptil(map<string, string> dados) : Animal(stoi(dados["id"]), dados["bat
   set_dieta(dados["dieta"]);
   set_venenoso(stod(dados["envergadura_das_asas"]));
   set_tipo_venenoso(dados["tipo_venenoso"]);
+  set_venenoso(dados["venenoso"].compare("sim") == 0);
   set_veterinario(dados["veterinario"]);
   set_tratador(dados["tratador"]);
 }

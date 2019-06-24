@@ -30,7 +30,7 @@ void Entrada::cadastrar_animal()
   map<string, string> dadosAnim;
   string input;
 
-  cout << "[--- Cadastrar Animal ---]" << endl;
+  cout << "[---    Cadastrar Animal    ---]" << endl;
   cout << "ANIMAL   : id;classe;nome;tamanho;dieta;veterinario;tratador;batismo;" << endl;
   cout << "MAMIFERO : cor do pelo;" << endl;
   cout << "AVE      : evergadura das asas; tamanho do bico;" << endl;
@@ -64,7 +64,7 @@ void Entrada::cadastrar_animal()
   }
   else if (dados[1].compare("ANFIBIO") == 0)
   {
-    dadosAnim.insert(pair<string, string>("total_de_mudas", dados[8]));
+    dadosAnim.insert(pair<string, string>("total_mudas", dados[8]));
     dadosAnim.insert(pair<string, string>("ultima_muda", dados[9]));
     m_gerenciador.addAnfibio(dadosAnim);
   }
@@ -76,6 +76,17 @@ void Entrada::cadastrar_animal()
   }
 }
 
+void Entrada::consultar_animal_id()
+{
+  int id = 0;
+
+  cout << "[---  Consultar Animal Id ---]" << endl;
+  cout << "Digite o Id do Animal: ";
+  cin >> id;
+
+  cout << m_gerenciador.consultar_animal(id);
+}
+
 void Entrada::iniciar()
 {
   int opcao = 0;
@@ -84,9 +95,10 @@ void Entrada::iniciar()
   {
     cout << endl;
 
-    cout << "[---       Menu       ---]" << endl;
+    cout << "[---         Menu         ---]" << endl;
     cout << "1 - Cadastrar Animal" << endl;
-    cout << "[---                  ---]" << endl;
+    cout << "2 - Consultar Animal Por Id" << endl;
+    cout << "[---                      ---]" << endl;
     cout << "Digite uma opção: ";
     cin >> opcao;
 
@@ -95,6 +107,9 @@ void Entrada::iniciar()
     {
     case 1:
       cadastrar_animal();
+      break;
+    case 2:
+      consultar_animal_id();
       break;
 
     default:

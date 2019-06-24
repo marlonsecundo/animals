@@ -1,7 +1,6 @@
 #ifndef ENTRADA_H
 #define ENTRADA_H
 
-#include "animal.h"
 #include <vector>
 #include <fstream>
 #include <sstream>
@@ -16,7 +15,8 @@ private:
 public:
   void cadastrar_animal();
   void atualizar_animal();
-  void consultar_animal();
+  void consultar_animal_id();
+  void consultar_animal_veterinario();
   void deletar_animal();
   void iniciar();
 };

@@ -10,9 +10,9 @@ AnfibioNativo::AnfibioNativo(map<string, string> dados) : Anfibio(dados)
   set_total_mudas(stod(dados["total_mudas"]));
   set_data_string(dados["ultima_muda"]);
   set_veterinario(dados["veterinario"]);
-  set_tratador(dados["tratador"]);  
+  set_tratador(dados["tratador"]);
 }
 
-AnfibioNativo::~AnfibioNativo() {
-
+AnfibioNativo::~AnfibioNativo()
+{
 }
