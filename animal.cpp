@@ -143,7 +143,7 @@ string Animal::consultar(string id)
       aux3 = getchar();
       t_id++;
     }
-    aux2 = aux.substr(0, t_id);
+    aux2 = aux.substr(0, t_id-1);
     if (id.compare(aux2) == 0)
     {
       animal.close();
@@ -183,8 +183,100 @@ vector<string> Animal::consultarTipo(string tipo)
       t_tipo++;
     }
 
-    consulta[i] = aux.substr((t_id - 2), (t_id + t_tipo - 2));
+    consulta[i] = aux.substr(t_id, (t_id + t_tipo - 1));
     if (tipo.compare(consulta[i]) == 0)
+    {
+      consulta.push_back(aux);
+    }
+    i++;
+  }
+  animal.close();
+  return consulta;
+}
+vector<string> Animal::consutarVeterinario(string veterinario)
+{
+  ifstream animal("animal.txt");
+  string aux;
+  vector<string> consulta;
+  char aux3;
+
+  if (!animal)
+  {
+    cout << "Erro na abertura do aquivo -> animal.txt" << endl;
+  }
+  while (!animal.eof())
+  {
+    int i = 0;
+    int t_dieta = 0;
+    int t_veter = 0;
+    getline(animal, aux);
+    for (int j = 0; j < 6; j++)
+    {
+      while (aux3 != ';')
+      {
+      aux3 = getchar();
+      t_dieta++;
+      t_veter++;
+      }
+      aux3 = getchar();
+      t_dieta++;
+      t_veter++;
+    }
+    aux3 = getchar();
+    while (aux3 != ';')
+    {
+      aux3 = getchar();
+      t_veter++;
+    }
+
+    consulta[i] = aux.substr(t_dieta, (t_veter - 1));
+    if (veterinario.compare(consulta[i]) == 0)
+    {
+      consulta.push_back(aux);
+    }
+    i++;
+  }
+  animal.close();
+  return consulta;
+}
+vector<string> Animal::consutarTratador(string tratador)
+{
+  ifstream animal("animal.txt");
+  string aux;
+  vector<string> consulta;
+  char aux3;
+
+  if (!animal)
+  {
+    cout << "Erro na abertura do aquivo -> animal.txt" << endl;
+  }
+  while (!animal.eof())
+  {
+    int i = 0;
+    int t_veter = 0;
+    int t_trat = 0;
+    getline(animal, aux);
+    for (int j = 0; j < 7; j++)
+    {
+      while (aux3 != ';')
+      {
+      aux3 = getchar();
+      t_veter++;
+      t_trat++;
+      }
+      aux3 = getchar();
+      t_veter++;
+      t_trat++;
+    }
+    aux3 = getchar();
+    while (aux3 != ';')
+    {
+      aux3 = getchar();
+      t_trat++;
+    }
+
+    consulta[i] = aux.substr(t_veter, (t_trat - 1));
+    if (tratador.compare(consulta[i]) == 0)
     {
       consulta.push_back(aux);
     }
