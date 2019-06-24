@@ -151,6 +151,7 @@ string Animal::consultar(string id)
 
     if (id[0] == aux3)
     {
+      animal.close();
       return aux;
     }
   }
