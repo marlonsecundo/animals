@@ -28,3 +28,10 @@ void Gerenciador::addReptil(map<string, string> dados)
   Reptil reptil(dados);
   reptil.cadastrar();
 }
+
+string Gerenciador::consultar_animal(int id)
+{
+  Animal anim(0, "");
+  string result = anim.consultar(to_string(id));
+  return result;
+}

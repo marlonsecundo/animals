@@ -78,6 +78,12 @@ void Animal::set_tratador(string novo_tratador)
   this->m_tratador = novo_tratador;
 }
 
+vector<string> Animal::get_dados()
+{
+  vector<string> dados;
+  return dados;
+}
+
 int Animal::deletar()
 {
   ifstream tabela_animais("animais.txt");
@@ -130,6 +136,8 @@ string Animal::consultar(string id)
   string aux2;
   char aux3;
 
+  cout << "asd";
+
   if (!animal)
   {
     cout << "Erro na abertura do aquivo -> animal.txt" << endl;
@@ -143,7 +151,7 @@ string Animal::consultar(string id)
       aux3 = getchar();
       t_id++;
     }
-    aux2 = aux.substr(0, t_id-1);
+    aux2 = aux.substr(0, t_id - 1);
     if (id.compare(aux2) == 0)
     {
       animal.close();
@@ -214,9 +222,9 @@ vector<string> Animal::consutarVeterinario(string veterinario)
     {
       while (aux3 != ';')
       {
-      aux3 = getchar();
-      t_dieta++;
-      t_veter++;
+        aux3 = getchar();
+        t_dieta++;
+        t_veter++;
       }
       aux3 = getchar();
       t_dieta++;
@@ -260,9 +268,9 @@ vector<string> Animal::consutarTratador(string tratador)
     {
       while (aux3 != ';')
       {
-      aux3 = getchar();
-      t_veter++;
-      t_trat++;
+        aux3 = getchar();
+        t_veter++;
+        t_trat++;
       }
       aux3 = getchar();
       t_veter++;

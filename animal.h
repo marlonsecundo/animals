@@ -42,7 +42,7 @@ public:
   // Persistencia
 
   // id;classe;nome;sexo;tamanho;dieta;m_veterinario;m_tratador;batismo;
-  virtual vector<string> get_dados() = 0;
+  virtual vector<string> get_dados();
 
   void cadastrar();
   void atualizar();
@@ -53,6 +53,7 @@ public:
   vector<string> consutarTratador(string tratador);
 
   Animal(unsigned int novo_id, string novo_nome_batismo);
+
   ~Animal();
 };
 

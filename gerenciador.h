@@ -20,5 +20,7 @@ public:
   void addAve(map<string, string> dados);
   void addAnfibio(map<string, string> dados);
   void addReptil(map<string, string> dados);
+
+  string consultar_animal(int id);
 };
 #endif
