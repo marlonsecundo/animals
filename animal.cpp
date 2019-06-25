@@ -96,6 +96,7 @@ vector<string> Animal::get_dados()
 
 int Animal::deletar()
 {
+  cout << "IDDD:  " << m_id;
   ifstream tabela_animais("animais.txt");
   ofstream nova_tabela("animais.temp");
   string linha;
