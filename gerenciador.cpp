@@ -35,3 +35,10 @@ string Gerenciador::consultar_animal(int id)
   string result = anim.consultar(to_string(id));
   return result;
 }
+
+vector<string> Gerenciador::consultar_animal_tipo(string tipo)
+{
+  Animal anim(0, "");
+  vector<string> result = anim.consultarTipo(tipo);
+  return result;
+}

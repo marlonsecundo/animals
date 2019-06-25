@@ -22,5 +22,6 @@ public:
   void addReptil(map<string, string> dados);
 
   string consultar_animal(int id);
+  vector<string> consultar_animal_tipo(string tipo);
 };
 #endif

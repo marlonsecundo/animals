@@ -17,6 +17,7 @@ public:
   void atualizar_animal();
   void consultar_animal_id();
   void consultar_animal_veterinario();
+  void consultar_animal_tipo();
   void deletar_animal();
   void iniciar();
 };
