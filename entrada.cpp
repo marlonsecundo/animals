@@ -254,3 +254,19 @@ void Entrada::deletar_funcionario()
 
   m_gerenciador.deletarFuncionario(id);
 }
+void Entrada::consultar_animal_tratador()
+{
+  int id = 0;
+
+  cout << "[---  Consultar Animal Por Tratador Id ---]" << endl;
+  cout << "Digite o Id do Tratador: ";
+  cin >> id;
+
+  vector<string> result = m_gerenciador.consultar_animal_trat(to_string(id));
+
+  cout << "[--- Resultado ---]" << endl;
+  for (int i = 0; i < result.size(); i++)
+  {
+    cout << result[i] << endl;
+  }
+}

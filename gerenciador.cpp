@@ -83,3 +83,9 @@ void Gerenciador::deletarFuncionario(int id)
   func.setId(id);
   func.deletar();
 }
+vector<string> consultar_animal_trat(string tratId){
+  Animal anim(0, "");
+  anim.set_veterinario(tratId);
+  vector<string> result = anim.consutarTratador();
+  return result;
+}
