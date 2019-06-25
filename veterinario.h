@@ -10,6 +10,7 @@ class Veterinario : public Funcionario{
   private:
     string m_crmv;
   public:
+    Veterinario(map<string, string> dados);
     void setCRMV(string novoCRMV);
     string getCRMV();
 };
