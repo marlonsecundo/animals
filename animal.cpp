@@ -208,7 +208,7 @@ vector<string> Animal::consutarVeterinario(string veterinario)
   if (!animal)
   {
     cout << "Erro na abertura do aquivo -> animal.txt" << endl;
-    return;
+    return consulta;
   }
   while (getline(animal, linha))
   {
@@ -249,7 +249,7 @@ vector<string> Animal::consutarTratador(string tratador)
   if (!animal)
   {
     cout << "Erro na abertura do aquivo -> animal.txt" << endl;
-    return;
+    return consulta;
   }
   while (getline(animal, linha))
   {

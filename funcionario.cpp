@@ -68,7 +68,7 @@ vector<string> Funcionario::consultar(string id)
   if (!funcionario)
   {
     cout << "Erro na abertura do aquivo -> funcionario.txt" << endl;
-    return;
+    return consulta;
   }
 
   while (getline(funcionario, linha))
@@ -87,7 +87,7 @@ vector<string> Funcionario::consultar(string id)
       consulta.push_back(linha);
     }
   }
-  if (consulta.empty()==0)
+  if (consulta.empty() == 0)
   {
     cout << "Nenhum funcionario encontrado." << endl;
   }
