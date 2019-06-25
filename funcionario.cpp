@@ -14,7 +14,10 @@ Funcionario::Funcionario(map<string, string> dados)
   setRH(dados["rh"][0]);
   setEspecialidade(dados["especialidade"]);
 }
+Funcionario::Funcionario()
+{
 
+}
 void Funcionario::setId(int novoId)
 {
   this->m_id = novoId;
@@ -118,11 +121,11 @@ void Funcionario::cadastrar()
   arquivo.close();
 }
 
-vector<string> Funcionario::consultar(string id)
+string Funcionario::consultar(string id)
 {
   ifstream funcionario("funcionario.txt");
   string linha;
-  vector<string> consulta;
+  string consulta = "";
 
   if (!funcionario)
   {
@@ -143,10 +146,10 @@ vector<string> Funcionario::consultar(string id)
 
     if (id.compare(idArq) == 0)
     {
-      consulta.push_back(linha);
+      consulta = linha;
     }
   }
-  if (consulta.empty() == 0)
+  if (consulta.compare("") == 0)
   {
     cout << "Nenhum funcionario encontrado." << endl;
   }

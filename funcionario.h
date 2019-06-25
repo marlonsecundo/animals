@@ -21,6 +21,7 @@ private:
 
 public:
   Funcionario(map<string, string> dados);
+  Funcionario();
   void setId(int novoId);
   void setClasse(string classe);
   void setNome(string novoNome);
@@ -43,9 +44,10 @@ public:
   // id;classe;nome;cpf;idade;sangue;rh;especcialidade;crmv;seguranca;
   virtual vector<string> get_dados();
 
-  vector<string> consultar(string id);
-  void cadastrar();
-  void atualizar();
+  void cadastrar(vector<string> dados);
+  void atualizar(vector<string> dados);
   void deletar();
+  string consultar(string id);
+
 };
 #endif
