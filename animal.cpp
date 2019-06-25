@@ -119,12 +119,6 @@ void Animal::cadastrar()
 
   arquivo.open("animal.txt", std::ios::app);
 
-  if (!f.is_open())
-	{
-		cerr << "\nErro na abertura do arquivo\n";
-		return;
-  }
-
   for (int i = 0; i < dados.size(); i++)
   {
     arquivo << dados[i] << ";";
@@ -198,7 +192,7 @@ vector<string> Animal::consultarTipo(string tipo)
       consulta.push_back(linha);
     }
   }
-  if (consulta.empty()==0)
+  if (consulta.empty() == 0)
   {
     cout << "Nenhum animal desse tipo encontrado." << endl;
   }
@@ -239,7 +233,7 @@ vector<string> Animal::consutarVeterinario(string veterinario)
       consulta.push_back(linha);
     }
   }
-  if (consulta.empty()==0)
+  if (consulta.empty() == 0)
   {
     cout << "Nenhum veterinario encontrado." << endl;
   }
@@ -280,7 +274,7 @@ vector<string> Animal::consutarTratador(string tratador)
       consulta.push_back(linha);
     }
   }
-  if (consulta.empty()==0)
+  if (consulta.empty() == 0)
   {
     cout << "Nenhum tratador encontrado." << endl;
   }
