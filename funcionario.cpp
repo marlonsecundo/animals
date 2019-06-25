@@ -62,30 +62,34 @@ string Funcionario::getEspecialidade()
 vector<string> Funcionario::consultar(string id)
 {
   ifstream funcionario("funcionario.txt");
-  string aux;
-  vector <string> consulta;
-  char aux3;
+  string linha;
+  vector<string> consulta;
 
   if (!funcionario)
   {
-    cout << "Erro na abertura do aquivo -> animal.txt" << endl;
+    cout << "Erro na abertura do aquivo -> funcionario.txt" << endl;
+    return;
   }
-  while(!funcionario.eof())
+
+  while (getline(funcionario, linha))
   {
-    int i = 0;
-    int t_id = 0;
-    getline(funcionario, aux);
-    while(aux3 != ';')
+    int it = 0;
+    string idArq = "";
+
+    while (linha[it] != ';')
     {
-      aux3 = getchar();
-      t_id++;
+      idArq += linha[it];
+      it++;
     }
-    consulta[i] = aux.substr(0, (t_id-2));
-    if(id.compare(consulta[i]) == 0)
+
+    if (id.compare(idArq) == 0)
     {
-      consulta.push_back(aux);
+      consulta.push_back(linha);
     }
-    i++;
+  }
+  if (consulta.empty()==0)
+  {
+    cout << "Nenhum funcionario encontrado." << endl;
   }
   funcionario.close();
   return consulta;
