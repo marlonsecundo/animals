@@ -87,6 +87,24 @@ void Entrada::consultar_animal_id()
   cout << m_gerenciador.consultar_animal(id);
 }
 
+void Entrada::consultar_animal_tipo()
+{
+  string tipo = "";
+
+  cout << "[--- Consultar Animal Tipo ---]" << endl;
+  cout << "MAMIFERO,REPTIL,ANFIBIO,AVE,ANF_EXOTICO,AVE_NATIVA...";
+  cout << "Digite o Tipo do Animal: ";
+  cin >> tipo;
+
+  vector<string> result = m_gerenciador.consultar_animal_tipo(tipo);
+  cout << "[--- Resultado ---]";
+
+  for (int i = 0; i < result.size(); i++)
+  {
+    cout << result[i];
+  }
+}
+
 void Entrada::iniciar()
 {
   int opcao = 0;
@@ -98,11 +116,12 @@ void Entrada::iniciar()
     cout << "[---         Menu         ---]" << endl;
     cout << "1 - Cadastrar Animal" << endl;
     cout << "2 - Consultar Animal Por Id" << endl;
+    cout << "3 - Consultar Animal Por Tipo" << endl;
     cout << "[---                      ---]" << endl;
     cout << "Digite uma opção: ";
     cin >> opcao;
 
-    cout << endl;
+    system("CLS");
     switch (opcao)
     {
     case 1:
@@ -111,7 +130,9 @@ void Entrada::iniciar()
     case 2:
       consultar_animal_id();
       break;
-
+    case 3:
+      consultar_animal_tipo();
+      break;
     default:
       return;
       break;
