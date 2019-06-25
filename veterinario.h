@@ -15,6 +15,6 @@ public:
   Veterinario(map<string, string> dados);
   void setCRMV(string novoCRMV);
   string getCRMV();
-  virtual vector<string> get_dados();
+  vector<string> get_dados();
 };
 #endif

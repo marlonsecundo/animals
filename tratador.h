@@ -15,6 +15,6 @@ public:
   Tratador(map<string, string> dados);
   void setSegur(int novoSegur);
   int getSegur();
-  virtual vector<string> get_dados();
+  vector<string> get_dados();
 };
 #endif
