@@ -139,7 +139,7 @@ void Animal::cadastrar()
   arquivo.close();
 }
 
-string Animal::consultar(string id)
+string Animal::consultar()
 {
   ifstream animal("animal.txt");
   string linha;
@@ -161,7 +161,7 @@ string Animal::consultar(string id)
       it++;
     }
 
-    if (id.compare(idArq) == 0)
+    if (to_string(m_id).compare(idArq) == 0)
     {
       animal.close();
       return linha;
@@ -171,7 +171,7 @@ string Animal::consultar(string id)
   return "Animal nao encontrado";
 }
 
-vector<string> Animal::consultarTipo(string tipo)
+vector<string> Animal::consultarTipo()
 {
   ifstream animal("animal.txt");
   string linha;
@@ -197,7 +197,7 @@ vector<string> Animal::consultarTipo(string tipo)
       it++;
     }
 
-    if (tipo.compare(tipoArq) == 0)
+    if (m_classe.compare(tipoArq) == 0)
     {
       consulta.push_back(linha);
     }

@@ -49,15 +49,16 @@ void Gerenciador::deletarAnimal(int id)
 
 string Gerenciador::consultar_animal(int id)
 {
-  Animal anim(0, "");
-  string result = anim.consultar(to_string(id));
+  Animal anim(id, "");
+  string result = anim.consultar();
   return result;
 }
 
 vector<string> Gerenciador::consultar_animal_tipo(string tipo)
 {
   Animal anim(0, "");
-  vector<string> result = anim.consultarTipo(tipo);
+  anim.set_classe(tipo);
+  vector<string> result = anim.consultarTipo();
   return result;
 }
 

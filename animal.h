@@ -47,8 +47,8 @@ public:
   void cadastrar();
   void atualizar();
   int deletar();
-  string consultar(string id);
-  vector<string> consultarTipo(string tipo);
+  string consultar();
+  vector<string> consultarTipo();
   vector<string> consutarVeterinario();
   vector<string> consutarTratador();
 
