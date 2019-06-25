@@ -137,7 +137,7 @@ string Animal::consultar(string id)
   if (!animal)
   {
     cout << "Erro na abertura do aquivo -> animal.txt" << endl;
-    return;
+    return "";
   }
 
   while (getline(animal, linha))
@@ -170,7 +170,7 @@ vector<string> Animal::consultarTipo(string tipo)
   if (!animal)
   {
     cout << "Erro na abertura do aquivo -> animal.txt" << endl;
-    return;
+    return consulta;
   }
   while (getline(animal, linha))
   {
