@@ -118,7 +118,7 @@ void Animal::cadastrar()
   std::ofstream arquivo;
 
   arquivo.open("animal.txt", std::ios::app);
-  
+
   if (!f.is_open())
 	{
 		cerr << "\nErro na abertura do arquivo\n";
@@ -164,38 +164,36 @@ string Animal::consultar(string id)
 vector<string> Animal::consultarTipo(string tipo)
 {
   ifstream animal("animal.txt");
-  string aux;
+  string linha;
   vector<string> consulta;
-  char aux3;
 
   if (!animal)
   {
     cout << "Erro na abertura do aquivo -> animal.txt" << endl;
   }
-  while (!animal.eof())
+  while (getline(animal, linha))
   {
-    int i = 0;
-    int t_id = 0;
-    int t_tipo = 0;
-    getline(animal, aux);
-    while (aux3 != ';')
+    int it = 0;
+    string tipoArq = "";
+    while (linha[it] != ';')
     {
-      aux3 = getchar();
-      t_id++;
+      it++;
     }
-    aux3 = getchar();
-    while (aux3 != ';')
+    it++;
+    while (linha[it] != ';')
     {
-      aux3 = getchar();
-      t_tipo++;
+      tipoArq += linha[it];
+      it++;
     }
 
-    consulta[i] = aux.substr(t_id, (t_id + t_tipo - 1));
-    if (tipo.compare(consulta[i]) == 0)
+    if (tipo.compare(tipoArq) == 0)
     {
-      consulta.push_back(aux);
+      consulta.push_back(linha);
     }
-    i++;
+  }
+  if (consulta.empty()==0)
+  {
+    cout << "Nenhum animal desse tipo encontrado." << endl;
   }
   animal.close();
   return consulta;
@@ -203,45 +201,39 @@ vector<string> Animal::consultarTipo(string tipo)
 vector<string> Animal::consutarVeterinario(string veterinario)
 {
   ifstream animal("animal.txt");
-  string aux;
+  string linha;
   vector<string> consulta;
-  char aux3;
 
   if (!animal)
   {
     cout << "Erro na abertura do aquivo -> animal.txt" << endl;
   }
-  while (!animal.eof())
+  while (getline(animal, linha))
   {
-    int i = 0;
-    int t_dieta = 0;
-    int t_veter = 0;
-    getline(animal, aux);
-    for (int j = 0; j < 6; j++)
+    int it = 0;
+    string vetArq = "";
+    for (int i = 0; i < 6; i++)
     {
-      while (aux3 != ';')
+      while (linha[it] != ';')
       {
-        aux3 = getchar();
-        t_dieta++;
-        t_veter++;
+        it++;
       }
-      aux3 = getchar();
-      t_dieta++;
-      t_veter++;
+      it++;
     }
-    aux3 = getchar();
-    while (aux3 != ';')
+    while (linha[it] != ';')
     {
-      aux3 = getchar();
-      t_veter++;
+      vetArq += linha[it];
+      it++;
     }
 
-    consulta[i] = aux.substr(t_dieta, (t_veter - 1));
-    if (veterinario.compare(consulta[i]) == 0)
+    if (veterinario.compare(vetArq) == 0)
     {
-      consulta.push_back(aux);
+      consulta.push_back(linha);
     }
-    i++;
+  }
+  if (consulta.empty()==0)
+  {
+    cout << "Nenhum veterinario encontrado." << endl;
   }
   animal.close();
   return consulta;
@@ -249,45 +241,39 @@ vector<string> Animal::consutarVeterinario(string veterinario)
 vector<string> Animal::consutarTratador(string tratador)
 {
   ifstream animal("animal.txt");
-  string aux;
+  string linha;
   vector<string> consulta;
-  char aux3;
 
   if (!animal)
   {
     cout << "Erro na abertura do aquivo -> animal.txt" << endl;
   }
-  while (!animal.eof())
+  while (getline(animal, linha))
   {
-    int i = 0;
-    int t_veter = 0;
-    int t_trat = 0;
-    getline(animal, aux);
-    for (int j = 0; j < 7; j++)
+    int it = 0;
+    string tratArq = "";
+    for (int i = 0; i < 7; i++)
     {
-      while (aux3 != ';')
+      while (linha[it] != ';')
       {
-        aux3 = getchar();
-        t_veter++;
-        t_trat++;
+        it++;
       }
-      aux3 = getchar();
-      t_veter++;
-      t_trat++;
+      it++;
     }
-    aux3 = getchar();
-    while (aux3 != ';')
+    while (linha[it] != ';')
     {
-      aux3 = getchar();
-      t_trat++;
+      tratArq += linha[it];
+      it++;
     }
 
-    consulta[i] = aux.substr(t_veter, (t_trat - 1));
-    if (tratador.compare(consulta[i]) == 0)
+    if (tratador.compare(tratArq) == 0)
     {
-      consulta.push_back(aux);
+      consulta.push_back(linha);
     }
-    i++;
+  }
+  if (consulta.empty()==0)
+  {
+    cout << "Nenhum tratador encontrado." << endl;
   }
   animal.close();
   return consulta;
