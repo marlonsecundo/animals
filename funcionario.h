@@ -44,10 +44,9 @@ public:
   // id;classe;nome;cpf;idade;sangue;rh;especcialidade;crmv;seguranca;
   virtual vector<string> get_dados();
 
-  void cadastrar(vector<string> dados);
-  void atualizar(vector<string> dados);
+  void cadastrar();
+  void atualizar();
   void deletar();
   string consultar(string id);
-
 };
 #endif
