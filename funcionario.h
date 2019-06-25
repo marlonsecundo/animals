@@ -17,10 +17,12 @@ private:
   string m_tipo_sanguineo;
   char m_fator_rh;
   string m_especialidade;
+  string m_classe;
 
 public:
   Funcionario(map<string, string> dados);
   void setId(int novoId);
+  void setClasse(string classe);
   void setNome(string novoNome);
   void setCPF(string novoCPF);
   void setIdade(int novoIdade);
@@ -28,6 +30,7 @@ public:
   void setRH(char novoRH);
   void setEspecialidade(string novoEspecialidade);
   int getId();
+  string getClasse();
   string getNome();
   string getCPF();
   int getIdade();
@@ -37,12 +40,12 @@ public:
 
   // Persistencia
 
-  // 1;Mammalia;Leão;Panthera leo;M;2;Carne;0;1;Simba
-  vector<string> get_dados();
+  // id;classe;nome;cpf;idade;sangue;rh;especcialidade;crmv;seguranca;
+  virtual vector<string> get_dados();
 
-  void cadastrar(vector<string> dados);
-  void atualizar(vector<string> dados);
-  void deletar();
   vector<string> consultar(string id);
+  void cadastrar();
+  void atualizar();
+  void deletar();
 };
 #endif
