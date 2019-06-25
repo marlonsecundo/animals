@@ -132,27 +132,23 @@ void Animal::cadastrar()
 string Animal::consultar(string id)
 {
   ifstream animal("animal.txt");
-  string aux;
-  string aux2;
-  char aux3 = ' ';
+  string linha;
 
-  while (getline(animal, aux))
+  while (getline(animal, linha))
   {
-    int t_id = 0;
     int it = 0;
+    string idArq = "";
 
-    while (aux3 != ';')
+    while (linha[it] != ';')
     {
-      aux3 = aux[it];
-      t_id++;
+      idArq += linha[it];
       it++;
     }
-    aux3 = aux[it - 2];
 
-    if (id[0] == aux3)
+    if (id.compare(idArq) == 0)
     {
       animal.close();
-      return aux;
+      return linha;
     }
   }
   animal.close();
