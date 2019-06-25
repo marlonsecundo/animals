@@ -6,12 +6,13 @@
 #include "animal.h"
 #include <vector>
 #include <map>
+#include "animal_silvestre.h"
 
 using std::cin;
 using std::cout;
 using std::endl;
 
-class Animal_Exotico : public Animal
+class Animal_Exotico : public Animal_Silvestre
 {
   
 protected:

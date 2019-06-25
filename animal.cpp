@@ -118,6 +118,12 @@ void Animal::cadastrar()
   std::ofstream arquivo;
 
   arquivo.open("animal.txt", std::ios::app);
+  
+  if (!f.is_open())
+	{
+		cerr << "\nErro na abertura do arquivo\n";
+		return;
+  }
 
   for (int i = 0; i < dados.size(); i++)
   {
