@@ -96,9 +96,8 @@ vector<string> Animal::get_dados()
 
 int Animal::deletar()
 {
-  cout << "IDDD:  " << m_id;
-  ifstream tabela_animais("animais.txt");
-  ofstream nova_tabela("animais.temp");
+  ifstream tabela_animais("animal.txt");
+  ofstream nova_tabela("animal.temp");
   string linha;
   if (tabela_animais.is_open() && nova_tabela.is_open())
   {
@@ -112,13 +111,13 @@ int Animal::deletar()
     }
     tabela_animais.close();
     nova_tabela.close();
-    remove("animais.txt");
-    rename("animais.temp", "animais.txt");
+    remove("animal.txt");
+    rename("animal.temp", "animal.txt");
     return 0;
   }
   tabela_animais.close();
   nova_tabela.close();
-  remove("animais.temp");
+  remove("animal.temp");
   return 1;
 }
 
