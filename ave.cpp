@@ -43,8 +43,8 @@ vector<string> Ave::get_dados()
   dados.push_back(to_string(get_sexo()));
   dados.push_back(to_string(get_tamanho()));
   dados.push_back(get_dieta());
-  dados.push_back(m_veterinario);
-  dados.push_back(m_tratador);
+  dados.push_back(get_veterinario());
+  dados.push_back(get_tratador());
   dados.push_back(get_nome_batismo());
   dados.push_back(to_string(get_envergadura_das_asas()));
   dados.push_back(to_string(get_tamanho_do_bico_cm()));
