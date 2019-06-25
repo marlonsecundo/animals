@@ -21,6 +21,9 @@ public:
   void addAnfibio(map<string, string> dados);
   void addReptil(map<string, string> dados);
 
+  void addTratador(map<string, string> dados);
+  void addVeterinario(map<string, string> dados);
+
   string consultar_animal(int id);
   vector<string> consultar_animal_tipo(string tipo);
   string consultar_funcionario(int id);

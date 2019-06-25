@@ -10,13 +10,12 @@ Funcionario::Funcionario(map<string, string> dados)
   setNome(dados["nome"]);
   setCPF(dados["cpf"]);
   setIdade(stod(dados["idade"]));
-  setSangue(dados["tipo_sanguineo"]);
+  setSangue(dados["sangue"]);
   setRH(dados["rh"][0]);
   setEspecialidade(dados["especialidade"]);
 }
 Funcionario::Funcionario()
 {
-
 }
 void Funcionario::setId(int novoId)
 {
