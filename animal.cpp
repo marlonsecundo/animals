@@ -209,7 +209,7 @@ vector<string> Animal::consultarTipo(string tipo)
   animal.close();
   return consulta;
 }
-vector<string> Animal::consutarVeterinario(string veterinario)
+vector<string> Animal::consutarVeterinario()
 {
   ifstream animal("animal.txt");
   string linha;
@@ -238,19 +238,20 @@ vector<string> Animal::consutarVeterinario(string veterinario)
       it++;
     }
 
-    if (veterinario.compare(vetArq) == 0)
+    if (m_veterinario.compare(vetArq) == 0)
     {
       consulta.push_back(linha);
     }
   }
-  if (consulta.empty() == 0)
+  if (consulta.empty() == 1)
   {
     cout << "Nenhum veterinario encontrado." << endl;
   }
   animal.close();
   return consulta;
 }
-vector<string> Animal::consutarTratador(string tratador)
+
+vector<string> Animal::consutarTratador()
 {
   ifstream animal("animal.txt");
   string linha;
@@ -279,7 +280,7 @@ vector<string> Animal::consutarTratador(string tratador)
       it++;
     }
 
-    if (tratador.compare(tratArq) == 0)
+    if (m_tratador.compare(tratArq) == 0)
     {
       consulta.push_back(linha);
     }

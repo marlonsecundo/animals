@@ -61,6 +61,14 @@ vector<string> Gerenciador::consultar_animal_tipo(string tipo)
   return result;
 }
 
+vector<string> Gerenciador::consultar_animal_vet(string id)
+{
+  Animal anim(0, "");
+  anim.set_veterinario(id);
+  vector<string> result = anim.consutarVeterinario();
+  return result;
+}
+
 string Gerenciador::consultar_funcionario(int id)
 {
   Funcionario func;

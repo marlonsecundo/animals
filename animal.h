@@ -49,8 +49,8 @@ public:
   int deletar();
   string consultar(string id);
   vector<string> consultarTipo(string tipo);
-  vector<string> consutarVeterinario(string veterinario);
-  vector<string> consutarTratador(string tratador);
+  vector<string> consutarVeterinario();
+  vector<string> consutarTratador();
 
   Animal(unsigned int novo_id, string novo_nome_batismo);
 
