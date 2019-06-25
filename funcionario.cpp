@@ -155,3 +155,29 @@ string Funcionario::consultar(string id)
   funcionario.close();
   return consulta;
 }
+
+void Funcionario::deletar(){
+  ifstream tabela_funcionario("funcionario.txt");
+  ofstream nova_tabela("funcionario.temp");
+  string linha;
+  if (tabela_funcionario.is_open() && nova_tabela.is_open())
+  {
+    while (!tabela_funcionario.eof())
+    {
+      getline(tabela_funcionario, linha);
+      if (to_string(m_id) != linha.substr(0, linha.find(";")) && !linha.empty())
+      {
+        nova_tabela << linha << endl;
+      }
+    }
+    tabela_funcionario.close();
+    nova_tabela.close();
+    remove("funcionario.txt");
+    rename("funcionario.temp", "funcionario.txt");
+    return;
+  }
+  tabela_funcionario.close();
+  nova_tabela.close();
+  remove("funcionario.temp");
+  return;
+}

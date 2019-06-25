@@ -29,5 +29,6 @@ public:
   string consultar_animal(int id);
   vector<string> consultar_animal_tipo(string tipo);
   string consultar_funcionario(int id);
+  void deletarFuncionario (int id);
 };
 #endif

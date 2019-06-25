@@ -210,3 +210,13 @@ void Entrada::iniciar()
     }
   }
 }
+void Entrada::deletar_funcionario()
+{
+  int id = 0;
+
+  cout << "[---  Deletar Funcionario Id ---]" << endl;
+  cout << "Digite o Id do Funcionario: ";
+  cin >> id;
+
+  m_gerenciador.deletarFuncionario(id);
+}

@@ -66,3 +66,7 @@ string Gerenciador::consultar_funcionario(int id)
   string result = func.consultar(to_string(id));
   return result;
 }
+void Gerenciador::deletarFuncionario (int id){
+  Funcionario func;
+  func.deletar();
+}

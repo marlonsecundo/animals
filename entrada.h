@@ -23,6 +23,7 @@ public:
   void consultar_funcionario();
   void deletar_animal();
   void iniciar();
+  void deletar_funcionario();
 };
 
 #endif
