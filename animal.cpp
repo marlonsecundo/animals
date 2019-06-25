@@ -140,6 +140,12 @@ string Animal::consultar(string id)
   ifstream animal("animal.txt");
   string linha;
 
+  if (!animal)
+  {
+    cout << "Erro na abertura do aquivo -> animal.txt" << endl;
+    return;
+  }
+
   while (getline(animal, linha))
   {
     int it = 0;
@@ -170,6 +176,7 @@ vector<string> Animal::consultarTipo(string tipo)
   if (!animal)
   {
     cout << "Erro na abertura do aquivo -> animal.txt" << endl;
+    return;
   }
   while (getline(animal, linha))
   {
@@ -207,6 +214,7 @@ vector<string> Animal::consutarVeterinario(string veterinario)
   if (!animal)
   {
     cout << "Erro na abertura do aquivo -> animal.txt" << endl;
+    return;
   }
   while (getline(animal, linha))
   {
@@ -247,6 +255,7 @@ vector<string> Animal::consutarTratador(string tratador)
   if (!animal)
   {
     cout << "Erro na abertura do aquivo -> animal.txt" << endl;
+    return;
   }
   while (getline(animal, linha))
   {
