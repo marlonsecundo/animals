@@ -35,7 +35,7 @@ void Entrada::cadastrar_animal()
   cout << "MAMIFERO : cor do pelo;" << endl;
   cout << "AVE      : evergadura das asas; tamanho do bico;" << endl;
   cout << "ANFIBIO  : total de mudas; data da ultima muda;" << endl;
-  cout << "REPTIL   : venenoso; tipo de veneno;" << endl;
+  cout << "REPTIL   : venenoso (sim|nao); tipo de veneno;" << endl;
   cout << "Digite os dados do animal separados por ;" << endl;
   getline(cin, input);
   getline(cin, input);

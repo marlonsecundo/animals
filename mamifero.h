@@ -13,10 +13,10 @@
 using std::cin;
 using std::cout;
 using std::endl;
+using std::ifstream;
+using std::map;
 using std::string;
 using std::vector;
-using std::map;
-using std::ifstream;
 
 class Mamifero : public Animal
 {
@@ -31,7 +31,6 @@ public:
 
   string get_cor_pelo();
   vector<string> get_dados();
-  void atualizar();
 
   ~Mamifero();
 };

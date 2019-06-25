@@ -78,6 +78,16 @@ void Animal::set_tratador(string novo_tratador)
   this->m_tratador = novo_tratador;
 }
 
+string Animal::get_veterinario()
+{
+  return this->m_veterinario;
+}
+
+string Animal::get_tratador()
+{
+  return this->m_tratador;
+}
+
 vector<string> Animal::get_dados()
 {
   vector<string> dados;

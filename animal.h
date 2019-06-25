@@ -34,9 +34,9 @@ public:
   void set_dieta(string nova_dieta);
   string get_nome_batismo();
   void set_nome_batismo(string novo_nome_batismo);
-  Veterinario get_veterinario();
+  string get_veterinario();
   void set_veterinario(string novo_veterinario);
-  Tratador get_tratador();
+  string get_tratador();
   void set_tratador(string novo_tratador);
 
   // Persistencia
