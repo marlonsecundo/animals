@@ -41,6 +41,12 @@ void Gerenciador::addVeterinario(map<string, string> dados)
   vet.cadastrar();
 }
 
+void Gerenciador::deletarAnimal(int id)
+{
+  Animal anim(id, "");
+  anim.deletar();
+}
+
 string Gerenciador::consultar_animal(int id)
 {
   Animal anim(0, "");

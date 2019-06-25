@@ -153,6 +153,17 @@ void Entrada::cadastrar_funcionario()
   }
 }
 
+void Entrada::deletar_animal()
+{
+  int id = 0;
+
+  cout << "[---  Deletar Animal Id ---]" << endl;
+  cout << "Digite o Id do Animal: ";
+  cin >> id;
+
+  m_gerenciador.deletarAnimal(id);
+}
+
 void Entrada::iniciar()
 {
   int opcao = 0;
@@ -167,6 +178,7 @@ void Entrada::iniciar()
     cout << "3 - Consultar Animal Por Tipo" << endl;
     cout << "4 - Consultar Funcionario" << endl;
     cout << "5 - Cadastrar Funcionario" << endl;
+    cout << "6 - Deletar Animal" << endl;
     cout << "[---                      ---]" << endl;
     cout << "Digite uma opção: ";
     cin >> opcao;
@@ -188,6 +200,10 @@ void Entrada::iniciar()
     case 5:
       cadastrar_funcionario();
       break;
+    case 6:
+      deletar_animal();
+      break;
+
     default:
       return;
       break;
