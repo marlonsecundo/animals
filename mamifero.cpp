@@ -39,36 +39,6 @@ vector<string> Mamifero::get_dados()
   return dados;
 }
 
-void Mamifero::atualizar()
-{
-  ifstream arquivo("animal.txt");
-  string linha;
-  char *linha_aux = new char[linha.length() + 1];
-  if (arquivo.is_open())
-  {
-    while (!arquivo.eof())
-    {
-      getline(arquivo, linha);
-      strcpy(linha_aux, linha.c_str()); //dá pau quando encontra um 23, por exemplo.
-      char *token = strtok(linha_aux, ";");
-      while (token != 0)
-      {
-        string x = to_string(get_id());
-        if (strcmp(token, "2") == 0)
-        { // Nos meus testes, eu colocava "2" para testar e deu certo.
-          // Substituir os valores.
-        }
-        token = strtok(NULL, ";");
-      }
-    }
-    arquivo.close();
-  }
-  else
-  {
-    cout << "Erro ao abrir o arquivo. " << endl;
-  }
-}
-
 Mamifero::~Mamifero()
 {
 }
