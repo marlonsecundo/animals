@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <map>
 using namespace std;
 
 class Funcionario
@@ -18,6 +19,7 @@ private:
   string m_especialidade;
 
 public:
+  Funcionario(map<string, string> dados);
   void setId(int novoId);
   void setNome(string novoNome);
   void setCPF(string novoCPF);

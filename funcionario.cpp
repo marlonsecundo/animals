@@ -3,6 +3,17 @@
 #include <vector>
 using namespace std;
 
+Funcionario::Funcionario(map<string, string> dados)
+{
+  setId(stod(dados["id"]));
+  setNome(dados["nome"]);
+  setCPF(dados["cpf"]);
+  setIdade(stod(dados["idade"]));
+  setSangue(dados["tipo_sanguineo"]);
+  setRH(dados["rh"][0]);
+  setEspecialidade(dados["especialidade"]);
+}
+
 void Funcionario::setId(int novoId)
 {
   this->m_id = novoId;
