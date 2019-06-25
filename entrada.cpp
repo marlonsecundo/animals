@@ -101,9 +101,10 @@ void Entrada::consultar_animal_tipo()
 
   for (int i = 0; i < result.size(); i++)
   {
-    cout << result[i];
+    cout << result[i] << endl;
   }
 }
+
 void Entrada::consultar_funcionario()
 {
   int id = 0;
@@ -164,13 +165,33 @@ void Entrada::deletar_animal()
   m_gerenciador.deletarAnimal(id);
 }
 
+void Entrada::consultar_animal_veterinario()
+{
+  int id = 0;
+
+  cout << "[---  Consultar Animal Por Vet Id ---]" << endl;
+  cout << "Digite o Id do Vet: ";
+  cin >> id;
+
+  vector<string> result = m_gerenciador.consultar_animal_vet(to_string(id));
+
+  cout << "[--- Resultado ---]" << endl;
+  for (int i = 0; i < result.size(); i++)
+  {
+    cout << result[i] << endl;
+  }
+}
+
 void Entrada::iniciar()
 {
   int opcao = 0;
 
   while (true)
   {
-    cout << endl;
+    cout << endl
+         << endl
+         << endl
+         << endl;
 
     cout << "[---         Menu         ---]" << endl;
     cout << "1 - Cadastrar Animal" << endl;
@@ -180,9 +201,15 @@ void Entrada::iniciar()
     cout << "5 - Cadastrar Funcionario" << endl;
     cout << "6 - Deletar Animal" << endl;
     cout << "7 - Deletar Funcionario " << endl;
+    cout << "8 - Consultar Animal Por Vet Id" << endl;
     cout << "[---                      ---]" << endl;
     cout << "Digite uma opção: ";
     cin >> opcao;
+
+    cout << endl
+         << endl
+         << endl
+         << endl;
 
     switch (opcao)
     {
@@ -206,6 +233,9 @@ void Entrada::iniciar()
       break;
     case 7:
       deletar_funcionario();
+      break;
+    case 8:
+      consultar_animal_veterinario();
       break;
     default:
       return;
