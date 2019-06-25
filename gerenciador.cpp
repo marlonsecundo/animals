@@ -29,6 +29,18 @@ void Gerenciador::addReptil(map<string, string> dados)
   reptil.cadastrar();
 }
 
+void Gerenciador::addTratador(map<string, string> dados)
+{
+  Tratador func(dados);
+  func.cadastrar();
+}
+
+void Gerenciador::addVeterinario(map<string, string> dados)
+{
+  Veterinario vet(dados);
+  vet.cadastrar();
+}
+
 string Gerenciador::consultar_animal(int id)
 {
   Animal anim(0, "");

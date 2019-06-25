@@ -114,7 +114,43 @@ void Entrada::consultar_funcionario()
 
   string result = m_gerenciador.consultar_funcionario(id);
   cout << result;
+}
 
+void Entrada::cadastrar_funcionario()
+{
+  vector<string> dados;
+  map<string, string> dadosFunc;
+  string input;
+
+  cout << "[---    Cadastrar Animal    ---]" << endl;
+  cout << "FUNCIONARIO : id;classe;nome;cpf;idade;sangue;rh;especialidade;" << endl;
+  cout << "VETERINARIO : crmv;" << endl;
+  cout << "TRATADOR    : seguranca;" << endl;
+  cout << "Digite os dados do animal separados por ;" << endl;
+  getline(cin, input);
+  getline(cin, input);
+
+  dados = split(input, ";");
+
+  dadosFunc = {{"id", dados[0]},
+               {"classe", dados[1]},
+               {"nome", dados[2]},
+               {"cpf", dados[3]},
+               {"idade", dados[4]},
+               {"sangue", dados[5]},
+               {"rh", dados[6]},
+               {"especialidade", dados[7]}};
+
+  if (dados[1].compare("VETERINARIO") == 0)
+  {
+    dadosFunc.insert(pair<string, string>("crmv", dados[8]));
+    m_gerenciador.addVeterinario(dadosFunc);
+  }
+  else if (dados[1].compare("TRATADOR") == 0)
+  {
+    dadosFunc.insert(pair<string, string>("seguranca", dados[8]));
+    m_gerenciador.addTratador(dadosFunc);
+  }
 }
 
 void Entrada::iniciar()
@@ -130,11 +166,11 @@ void Entrada::iniciar()
     cout << "2 - Consultar Animal Por Id" << endl;
     cout << "3 - Consultar Animal Por Tipo" << endl;
     cout << "4 - Consultar Funcionario" << endl;
+    cout << "5 - Cadastrar Funcionario" << endl;
     cout << "[---                      ---]" << endl;
     cout << "Digite uma opção: ";
     cin >> opcao;
 
-    system("CLS");
     switch (opcao)
     {
     case 1:
@@ -148,6 +184,9 @@ void Entrada::iniciar()
       break;
     case 4:
       consultar_funcionario();
+      break;
+    case 5:
+      cadastrar_funcionario();
       break;
     default:
       return;

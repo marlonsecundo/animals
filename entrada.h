@@ -14,6 +14,8 @@ private:
 
 public:
   void cadastrar_animal();
+  void cadastrar_funcionario();
+
   void atualizar_animal();
   void consultar_animal_id();
   void consultar_animal_veterinario();
