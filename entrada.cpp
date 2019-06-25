@@ -104,6 +104,18 @@ void Entrada::consultar_animal_tipo()
     cout << result[i];
   }
 }
+void Entrada::consultar_funcionario()
+{
+  int id = 0;
+
+  cout << "[---  Consultar Funcionario  ---]" << endl;
+  cout << "Digite o Id do Funcionario: ";
+  cin >> id;
+
+  string result = m_gerenciador.consultar_funcionario(id);
+  cout << result;
+
+}
 
 void Entrada::iniciar()
 {
@@ -117,6 +129,7 @@ void Entrada::iniciar()
     cout << "1 - Cadastrar Animal" << endl;
     cout << "2 - Consultar Animal Por Id" << endl;
     cout << "3 - Consultar Animal Por Tipo" << endl;
+    cout << "4 - Consultar Funcionario" << endl;
     cout << "[---                      ---]" << endl;
     cout << "Digite uma opção: ";
     cin >> opcao;
@@ -132,6 +145,9 @@ void Entrada::iniciar()
       break;
     case 3:
       consultar_animal_tipo();
+      break;
+    case 4:
+      consultar_funcionario();
       break;
     default:
       return;

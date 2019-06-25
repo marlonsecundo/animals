@@ -42,3 +42,9 @@ vector<string> Gerenciador::consultar_animal_tipo(string tipo)
   vector<string> result = anim.consultarTipo(tipo);
   return result;
 }
+string Gerenciador::consultar_funcionario(int id)
+{
+  Funcionario func;
+  string result = func.consultar(to_string(id));
+  return result;
+}

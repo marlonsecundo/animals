@@ -20,6 +20,7 @@ private:
 
 public:
   Funcionario(map<string, string> dados);
+  Funcionario();
   void setId(int novoId);
   void setNome(string novoNome);
   void setCPF(string novoCPF);
@@ -43,6 +44,6 @@ public:
   void cadastrar(vector<string> dados);
   void atualizar(vector<string> dados);
   void deletar();
-  vector<string> consultar(string id);
+  string consultar(string id);
 };
 #endif
