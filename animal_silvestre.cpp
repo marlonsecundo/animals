@@ -37,7 +37,7 @@ vector<string> Animal_Silvestre::get_dados()
   dados.push_back(get_aotorizacao_ibama());
   dados.push_back(m_veterinario);
   dados.push_back(m_tratador);
- 
+
   return dados;
 }
 

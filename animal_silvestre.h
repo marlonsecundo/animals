@@ -9,16 +9,16 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-class Animal_Selvestre 
+class Animal_Silvestre
 {
-  
+
 protected:
   string m_autorizacao_ibama;
 private:
-  Animal_Selvestre(map<string, string> dados);
+  Animal_Silvestre(map<string, string> dados);
   void set_autorizacao_ibama(string autorizacao_ibama);
-  
-  vector<string> get_dados(); 
+
+  vector<string> get_dados();
 
   string get_autorizacao_ibama();
 

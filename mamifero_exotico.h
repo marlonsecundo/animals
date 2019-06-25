@@ -2,13 +2,14 @@
 
 #define MAMIFERO_EXOTICO_H
 #include "mamifero.h"
+#include "animal_exotico.h"
 #include <string>
 #include <map>
 
 using std::string;
 using std::map;
 
-class MamiferoExotico : public Mamifero {
+class MamiferoExotico : public Mamifero, Animal_Exotico {
     public:
         MamiferoExotico(map<string, string> dados);
         ~MamiferoExotico();

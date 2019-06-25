@@ -2,13 +2,14 @@
 
 #define ANFIBIO_NATIVO_H
 #include "anfibio.h"
+#include "animal_nativo.h"
 #include <string>
 #include <map>
 
 using std::map;
 using std::string;
 
-class AnfibioNativo : public Anfibio
+class AnfibioNativo : public Anfibio, Animal_Nativo
 {
 public:
   AnfibioNativo(map<string, string> dados);

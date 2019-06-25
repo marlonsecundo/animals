@@ -12,9 +12,9 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-class Animal_Nativo : public Animal_Selvestre
+class Animal_Nativo : public Animal_Silvestre
 {
-  
+
 protected:
   string m_uf_origem;
   string m_autorizacao;
