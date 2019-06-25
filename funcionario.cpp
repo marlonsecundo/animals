@@ -6,6 +6,7 @@ using namespace std;
 Funcionario::Funcionario(map<string, string> dados)
 {
   setId(stod(dados["id"]));
+  setClasse(dados["classe"]);
   setNome(dados["nome"]);
   setCPF(dados["cpf"]);
   setIdade(stod(dados["idade"]));
@@ -45,10 +46,22 @@ void Funcionario::setEspecialidade(string novoEspecialidade)
 {
   this->m_especialidade = novoEspecialidade;
 }
+
+void Funcionario::setClasse(string classe)
+{
+  this->m_classe = classe;
+}
+
 int Funcionario::getId()
 {
   return this->m_id;
 }
+
+string Funcionario::getClasse()
+{
+  return this->m_classe;
+}
+
 string Funcionario::getNome()
 {
   return this->m_nome;
@@ -72,6 +85,40 @@ char Funcionario::getRH()
 string Funcionario::getEspecialidade()
 {
   return this->m_especialidade;
+}
+
+vector<string> Funcionario::get_dados()
+{
+  // id;classe;nome;cpf;idade;sangue;rh;especcialidade;
+  vector<string> dados;
+  dados.push_back(to_string(getId()));
+  dados.push_back(getClasse());
+  dados.push_back(getNome());
+  dados.push_back(getCPF());
+  dados.push_back(to_string(getIdade()));
+  dados.push_back(getSangue());
+  dados.push_back(to_string(getRH()));
+  dados.push_back(getEspecialidade());
+
+  return dados;
+}
+
+void Funcionario::cadastrar()
+{
+  vector<string> dados = get_dados();
+
+  std::ofstream arquivo;
+
+  arquivo.open("funcionario.txt", std::ios::app);
+
+  for (int i = 0; i < dados.size(); i++)
+  {
+    arquivo << dados[i] << ";";
+  }
+
+  arquivo << "\n";
+
+  arquivo.close();
 }
 
 string Funcionario::consultar(string id)
