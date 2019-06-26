@@ -1,10 +1,21 @@
 #include "animal.h"
 #include <fstream>
 using namespace std;
-Animal::Animal(unsigned int novo_id, string novo_nome_batismo)
+Animal::Animal(map<string, string> dados)
 {
-  this->m_id = novo_id;
-  this->m_nome_batismo = novo_nome_batismo;
+  set_id(stoi(dados["id"]));
+  set_nome_batismo(dados["batismo"]);
+  set_classe(dados["classe"]);
+  set_nome_cientifico(dados["nome"]);
+  set_sexo(dados["sexo"][0]);
+  set_tamanho(stod(dados["tamanho"]));
+  set_dieta(dados["dieta"]);
+  set_veterinario(dados["veterinario"]);
+  set_tratador(dados["tratador"]);
+}
+
+Animal::Animal()
+{
 }
 
 Animal::~Animal()
