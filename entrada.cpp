@@ -201,19 +201,19 @@ void Entrada::atualizar_animal()
   {
     dadosAnim.insert(pair<string, string>("envergadura_das_asas", dados[8]));
     dadosAnim.insert(pair<string, string>("tamanho_do_bico", dados[9]));
-    m_gerenciador.addAve(dadosAnim);
+    m_gerenciador.atualizarAve(dadosAnim);
   }
   else if (dados[1].compare("ANFIBIO") == 0)
   {
     dadosAnim.insert(pair<string, string>("total_mudas", dados[8]));
     dadosAnim.insert(pair<string, string>("ultima_muda", dados[9]));
-    m_gerenciador.addAnfibio(dadosAnim);
+    m_gerenciador.atualizarAnfibio(dadosAnim);
   }
   else if (dados[1].compare("REPTIL") == 0)
   {
     dadosAnim.insert(pair<string, string>("venenoso", dados[8]));
     dadosAnim.insert(pair<string, string>("tipo_veneno", dados[9]));
-    m_gerenciador.addReptil(dadosAnim);
+    m_gerenciador.atualizarReptil(dadosAnim);
   }
 }
 
