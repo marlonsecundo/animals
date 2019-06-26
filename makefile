@@ -24,32 +24,33 @@ mamifero.o: mamifero.cpp mamifero.h
 reptil.o: reptil.cpp reptil.h
 		$(CC) reptil.cpp -c
 
+anfibio_exotico.o: anfibio_exotico.cpp anfibio_exotico.h
+		$(CC) anfibio_exotico.cpp -c
+anfibio_nativo.o: anfibio_nativo.cpp anfibio_nativo.h
+		$(CC) anfibio_nativo.cpp -c
+
+ave_exotica.o: ave_exotica.cpp ave_exotica.h
+		$(CC) ave_exotica.cpp -c
+ave_nativa.o: ave_nativa.cpp ave_nativa.h
+		$(CC) ave_nativa.cpp -c
+
+mamifero_exotico.o: mamifero_exotico.cpp mamifero_exotico.h
+		$(CC) mamifero_exotico.cpp -c
+mamifero_nativo.o: mamifero_nativo.cpp mamifero_nativo.h
+		$(CC) mamifero_nativo.cpp -c
+
+reptil_exotico.o: reptil_exotico.cpp reptil_exotico.h
+		$(CC) reptil_exotico.cpp -c
+reptil_nativo.o: reptil_nativo.cpp reptil_nativo.h
+		$(CC) reptil_nativo.cpp -c
+
 tratador.o: tratador.cpp tratador.h
 		$(CC) tratador.cpp -c
 veterinario.o: veterinario.cpp veterinario.h
 		$(CC) veterinario.cpp -c
-main.e: main.cpp anfibio.o animal.o animal_exotico.o animal_nativo.o animal_silvestre.o ave.o entrada.o funcionario.o gerenciador.o mamifero.o reptil.o tratador.o veterinario.o
-		$(CC) main.cpp anfibio.o animal.o animal_exotico.o animal_nativo.o animal_silvestre.o ave.o entrada.o funcionario.o gerenciador.o mamifero.o reptil.o tratador.o veterinario.o -o main.e
+main.e: main.cpp anfibio_exotico.o anfibio_nativo.o ave_exotica.o ave_nativa.o mamifero_exotico.o mamifero_nativo.o reptil_exotico.o reptil_nativo.o anfibio.o animal.o animal_exotico.o animal_nativo.o animal_silvestre.o ave.o entrada.o funcionario.o gerenciador.o mamifero.o reptil.o tratador.o veterinario.o
+		$(CC) main.cpp anfibio_exotico.o anfibio_nativo.o ave_exotica.o ave_nativa.o mamifero_exotico.o mamifero_nativo.o reptil_exotico.o reptil_nativo.o anfibio.o animal.o animal_exotico.o animal_nativo.o animal_silvestre.o ave.o entrada.o funcionario.o gerenciador.o mamifero.o reptil.o tratador.o veterinario.o -o main.e
 
 clean:
 		rm *.o
 
-# anfibio_exotico.o: anfibio_exotico.cpp anfibio_exotico.h
-# 		$(CC) anfibio_exotico.cpp -c
-# anfibio_nativo.o: anfibio_nativo.cpp anfibio_nativo.h
-# 		$(CC) anfibio_nativo.cpp -c
-
-# ave_exotica.o: ave_exotica.cpp ave_exotica.h
-# 		$(CC) ave_exotica.cpp -c
-# ave_nativa.o: ave_nativa.cpp ave_nativa.h
-# 		$(CC) ave_nativa.cpp -c
-
-# mamifero_exotico.o: mamifero_exotico.cpp mamifero_exotico.h
-# 		$(CC) mamifero_exotico.cpp -c
-# mamifero_nativo.o: mamifero_nativo.cpp mamifero_nativo.h
-# 		$(CC) mamifero_nativo.cpp -c
-
-# reptil_exotico.o: reptil_exotico.cpp reptil_exotico.h
-# 		$(CC) reptil_exotico.cpp -c
-# reptil_nativo.o: reptil_nativo.cpp reptil_nativo.h
-# 		$(CC) reptil_nativo.cpp -c
