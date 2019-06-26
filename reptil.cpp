@@ -1,3 +1,12 @@
+
+/**
+ * @file reptil.cpp
+ * @brief Arquivo que implementa os métodos da classe Reptil.
+ * @author Davi César, Emanuel Felipe, João Paulo Carneiro, Lucas Vinicius, Marlon Secundo
+ * @since 28/05/2019
+ * @date 25/06/2019
+ * @version 1.0
+ */
 #include "reptil.h"
 
 Reptil::Reptil(map<string, string> dados) : Animal(dados)

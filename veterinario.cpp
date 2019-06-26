@@ -1,3 +1,12 @@
+/**
+ * @file veterinario.cpp
+ * @brief Arquivo que implementa os métodos da classe Veterinario.
+ * @author Davi César, Emanuel Felipe, João Paulo Carneiro, Lucas Vinicius, Marlon Secundo
+ * @since 28/05/2019
+ * @date 25/06/2019
+ * @version 1.0
+ */
+
 #include "veterinario.h"
 using namespace std;
 Veterinario::Veterinario(map<string, string> dados) : Funcionario(dados)

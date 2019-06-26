@@ -1,3 +1,12 @@
+
+/**
+ * @file mamifero.cpp
+ * @brief Arquivo que implementa os métodos da classe Mamifero.
+ * @author Davi César, Emanuel Felipe, João Paulo Carneiro, Lucas Vinicius, Marlon Secundo
+ * @since 28/05/2019
+ * @date 25/06/2019
+ * @version 1.0
+ */
 #include "mamifero.h"
 
 Mamifero::Mamifero(map<string, string> dados) : Animal(dados)
