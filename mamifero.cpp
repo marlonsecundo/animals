@@ -1,15 +1,8 @@
 #include "mamifero.h"
 
-Mamifero::Mamifero(map<string, string> dados) : Animal(stoi(dados["id"]), dados["batismo"])
+Mamifero::Mamifero(map<string, string> dados) : Animal(dados)
 {
-  set_classe(dados["classe"]);
-  set_nome_cientifico(dados["nome"]);
-  set_sexo(dados["sexo"][0]);
-  set_tamanho(stod(dados["tamanho"]));
-  set_dieta(dados["dieta"]);
   set_cor_pelo(dados["cor_pelo"]);
-  set_veterinario(dados["veterinario"]);
-  set_tratador(dados["tratador"]);
 }
 
 void Mamifero::set_cor_pelo(string cor_pelo)

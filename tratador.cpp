@@ -3,14 +3,6 @@ using namespace std;
 
 Tratador::Tratador(map<string, string> dados) : Funcionario(dados)
 {
-  setId(stod(dados["id"]));
-  setClasse(dados["classe"]);
-  setNome(dados["nome"]);
-  setCPF(dados["cpf"]);
-  setIdade(stod(dados["idade"]));
-  setSangue(dados["sangue"]);
-  setRH(dados["rh"][0]);
-  setEspecialidade(dados["especialidade"]);
   setSegur(stod(dados["seguranca"]));
 }
 void Tratador::setSegur(int novoSegur)

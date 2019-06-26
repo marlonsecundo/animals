@@ -52,7 +52,8 @@ public:
   vector<string> consutarVeterinario();
   vector<string> consutarTratador();
 
-  Animal(unsigned int novo_id, string novo_nome_batismo);
+  Animal(map<string, string> dados);
+  Animal();
 
   ~Animal();
 };
