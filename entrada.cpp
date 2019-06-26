@@ -234,6 +234,23 @@ void Entrada::consultar_animal_veterinario()
   }
 }
 
+void Entrada::consultar_animal_tratador()
+{
+  int id = 0;
+
+  cout << "[---  Consultar Animal Por Trat Id ---]" << endl;
+  cout << "Digite o Id do Trat: ";
+  cin >> id;
+
+  vector<string> result = m_gerenciador.consultar_animal_trat(to_string(id));
+
+  cout << "[--- Resultado ---]" << endl;
+  for (int i = 0; i < result.size(); i++)
+  {
+    cout << result[i] << endl;
+  }
+}
+
 void Entrada::iniciar()
 {
   int opcao = 0;
@@ -247,14 +264,15 @@ void Entrada::iniciar()
 
     cout << "[---         Menu         ---]" << endl;
     cout << "1 - Cadastrar Animal" << endl;
-    cout << "2 - Consultar Animal Por Id" << endl;
-    cout << "3 - Consultar Animal Por Tipo" << endl;
-    cout << "4 - Consultar Funcionario" << endl;
-    cout << "5 - Cadastrar Funcionario" << endl;
-    cout << "6 - Deletar Animal" << endl;
-    cout << "7 - Deletar Funcionario " << endl;
-    cout << "8 - Consultar Animal Por Vet Id" << endl;
-    cout << "9 - Atualizar Animal" << endl;
+    cout << "2 - Cadastrar Funcionario" << endl;
+    cout << "3 - Atualizar Animal" << endl;
+    cout << "4 - Deletar Animal" << endl;
+    cout << "5 - Deletar Funcionario " << endl;
+    cout << "6 - Consultar Funcionario" << endl;
+    cout << "7 - Consultar Animal Por Id" << endl;
+    cout << "8 - Consultar Animal Por Tipo" << endl;
+    cout << "9 - Consultar Animal Por Vet Id" << endl;
+    cout << "10 - Consultar Animal Por Trat Id" << endl;
     cout << "[---                      ---]" << endl;
     cout << "Digite uma opção: ";
     cin >> opcao;
@@ -270,28 +288,31 @@ void Entrada::iniciar()
       cadastrar_animal();
       break;
     case 2:
-      consultar_animal_id();
-      break;
-    case 3:
-      consultar_animal_tipo();
-      break;
-    case 4:
-      consultar_funcionario();
-      break;
-    case 5:
       cadastrar_funcionario();
       break;
-    case 6:
+    case 3:
+      atualizar_animal();
+      break;
+    case 4:
       deletar_animal();
       break;
-    case 7:
+    case 5:
       deletar_funcionario();
       break;
+    case 6:
+      consultar_funcionario();
+      break;
+    case 7:
+      consultar_animal_id();
+      break;
     case 8:
-      consultar_animal_veterinario();
+      consultar_animal_tipo();
       break;
     case 9:
-      atualizar_animal();
+      consultar_animal_veterinario();
+      break;
+    case 10:
+      consultar_animal_tratador();
       break;
     default:
       return;
