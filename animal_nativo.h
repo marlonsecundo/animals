@@ -15,11 +15,11 @@ using std::endl;
 class Animal_Nativo : public Animal_Silvestre
 {
 
-protected:
+private:
   string m_uf_origem;
   string m_autorizacao;
 
-private:
+public:
   Animal_Nativo(string autorizacao_ibama, string uf_origem, string autorizacao);
   void set_uf_origem(string uf_origem);
   void set_autorizacao(string autorizacao);
