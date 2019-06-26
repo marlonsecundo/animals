@@ -97,7 +97,7 @@ void Entrada::consultar_animal_tipo()
   cin >> tipo;
 
   vector<string> result = m_gerenciador.consultar_animal_tipo(tipo);
-  cout << "[--- Resultado ---]";
+  cout << "[--- Resultado ---]" << endl;
 
   for (int i = 0; i < result.size(); i++)
   {
