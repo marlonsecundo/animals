@@ -13,9 +13,9 @@ class Animal_Exotico : public Animal_Silvestre
 
 protected:
   string m_pais_origem;
-
-private:
   Animal_Exotico(string autorizacao_ibama, string pais_origem);
+private:
+
   void set_pais_origem(string pais_origem);
 
   string get_pais_origem();
