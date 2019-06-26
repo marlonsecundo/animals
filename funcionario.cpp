@@ -156,7 +156,8 @@ string Funcionario::consultar(string id)
   return consulta;
 }
 
-void Funcionario::deletar(){
+void Funcionario::deletar()
+{
   ifstream tabela_funcionario("funcionario.txt");
   ofstream nova_tabela("funcionario.temp");
   string linha;

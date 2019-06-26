@@ -6,17 +6,10 @@ using std::cout;
 using std::endl;
 using std::string;
 
-Anfibio::Anfibio(map<string, string> dados) : Animal(stoi(dados["id"]), dados["batismo"])
+Anfibio::Anfibio(map<string, string> dados) : Animal(dados)
 {
-  set_classe(dados["classe"]);
-  set_nome_cientifico(dados["nome"]);
-  set_sexo(dados["sexo"][0]);
-  set_tamanho(stod(dados["tamanho"]));
-  set_dieta(dados["dieta"]);
   set_total_mudas(stod(dados["total_mudas"]));
   set_data_string(dados["ultima_muda"]);
-  set_veterinario(dados["veterinario"]);
-  set_tratador(dados["tratador"]);
 }
 
 void Anfibio::set_total_mudas(int total_mudas)

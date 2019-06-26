@@ -67,20 +67,22 @@ void Gerenciador::atualizarReptil(map<string, string> dados)
 
 void Gerenciador::deletarAnimal(int id)
 {
-  Animal anim(id, "");
+  Animal anim;
+  anim.set_id(id);
   anim.deletar();
 }
 
 string Gerenciador::consultar_animal(int id)
 {
-  Animal anim(id, "");
+  Animal anim;
+  anim.set_id(id);
   string result = anim.consultar();
   return result;
 }
 
 vector<string> Gerenciador::consultar_animal_tipo(string tipo)
 {
-  Animal anim(0, "");
+  Animal anim;
   anim.set_classe(tipo);
   vector<string> result = anim.consultarTipo();
   return result;
@@ -88,7 +90,7 @@ vector<string> Gerenciador::consultar_animal_tipo(string tipo)
 
 vector<string> Gerenciador::consultar_animal_vet(string id)
 {
-  Animal anim(0, "");
+  Animal anim;
   anim.set_veterinario(id);
   vector<string> result = anim.consutarVeterinario();
   return result;
@@ -107,8 +109,10 @@ void Gerenciador::deletarFuncionario(int id)
   func.setId(id);
   func.deletar();
 }
-vector<string> Gerenciador::consultar_animal_trat(string tratId){
-  Animal anim(0, "");
+
+vector<string> Gerenciador::consultar_animal_trat(string tratId)
+{
+  Animal anim;
   anim.set_veterinario(tratId);
   vector<string> result = anim.consutarTratador();
   return result;
