@@ -292,3 +292,42 @@ vector<string> Animal::consutarTratador()
   animal.close();
   return consulta;
 }
+
+int Animal::atualizar()
+{
+  vector<string> dados = get_dados();
+  ifstream tabela_animais("animal.txt");
+  ofstream nova_tabela("animal.temp");
+  string linha;
+
+  string linhaAtualizada = "";
+  for (int i = 0; i < dados.size(); i++)
+  {
+    linhaAtualizada += dados[i] + ";";
+  }
+
+  if (tabela_animais.is_open() && nova_tabela.is_open())
+  {
+    while (!tabela_animais.eof())
+    {
+      getline(tabela_animais, linha);
+      if (to_string(m_id) != linha.substr(0, linha.find(";")) && !linha.empty())
+      {
+        nova_tabela << linha << endl;
+      }
+      else if (!linha.empty())
+      {
+        nova_tabela << linhaAtualizada << endl;
+      }
+    }
+    tabela_animais.close();
+    nova_tabela.close();
+    remove("animal.txt");
+    rename("animal.temp", "animal.txt");
+    return 0;
+  }
+  tabela_animais.close();
+  nova_tabela.close();
+  remove("animal.temp");
+  return 1;
+}

@@ -45,7 +45,7 @@ public:
   virtual vector<string> get_dados();
 
   void cadastrar();
-  void atualizar();
+  int atualizar();
   int deletar();
   string consultar();
   vector<string> consultarTipo();
