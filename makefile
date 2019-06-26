@@ -1,6 +1,12 @@
 CC=g++
 .DEFAULT_GOAL=main.e
 
+animal_exotico.o: animal_exotico.cpp animal_exotico.h
+		$(CC) animal_exotico.cpp -c
+animal_nativo.o: animal_nativo.cpp animal_nativo.h
+		$(CC) animal_nativo.cpp -c
+animal_silvestre.o: animal_silvestre.cpp animal_silvestre.h
+		$(CC) animal_silvestre.cpp -c
 anfibio.o: anfibio.cpp anfibio.h
 		$(CC) anfibio.cpp -c
 animal.o: animal.cpp animal.h
@@ -22,8 +28,8 @@ tratador.o: tratador.cpp tratador.h
 		$(CC) tratador.cpp -c
 veterinario.o: veterinario.cpp veterinario.h
 		$(CC) veterinario.cpp -c
-main.e: main.cpp anfibio.o animal.o ave.o entrada.o funcionario.o gerenciador.o mamifero.o reptil.o tratador.o veterinario.o
-		$(CC) main.cpp anfibio.o animal.o ave.o entrada.o funcionario.o gerenciador.o mamifero.o reptil.o tratador.o veterinario.o -o main.e
+main.e: main.cpp anfibio.o animal.o animal_exotico.o animal_nativo.o animal_silvestre.o ave.o entrada.o funcionario.o gerenciador.o mamifero.o reptil.o tratador.o veterinario.o
+		$(CC) main.cpp anfibio.o animal.o animal_exotico.o animal_nativo.o animal_silvestre.o ave.o entrada.o funcionario.o gerenciador.o mamifero.o reptil.o tratador.o veterinario.o -o main.e
 
 clean:
 		rm *.o
@@ -32,11 +38,6 @@ clean:
 # 		$(CC) anfibio_exotico.cpp -c
 # anfibio_nativo.o: anfibio_nativo.cpp anfibio_nativo.h
 # 		$(CC) anfibio_nativo.cpp -c
-
-# animal_exotico.o: animal_exotico.cpp animal_exotico.h
-# 		$(CC) animal_exotico.cpp -c
-# animal_nativo.o: animal_nativo.cpp animal_nativo.h
-# 		$(CC) animal_nativo.cpp -c
 
 # ave_exotica.o: ave_exotica.cpp ave_exotica.h
 # 		$(CC) ave_exotica.cpp -c
