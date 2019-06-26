@@ -21,6 +21,8 @@ public:
   void addAnfibio(map<string, string> dados);
   void addReptil(map<string, string> dados);
 
+  void atualizarMamifero(map<string, string> dados);
+
   void addTratador(map<string, string> dados);
   void addVeterinario(map<string, string> dados);
 

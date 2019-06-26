@@ -8,6 +8,8 @@ https://arquivos.info.ufrn.br/arquivos/2019128248cdfb628283550b08fe4597c/PetFera
 
 ```
 g++ *.cpp -o main.e
+OU
+make -f makefile
 ```
 
 ### Execução

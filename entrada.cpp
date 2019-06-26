@@ -165,6 +165,58 @@ void Entrada::deletar_animal()
   m_gerenciador.deletarAnimal(id);
 }
 
+void Entrada::atualizar_animal()
+{
+  vector<string> dados;
+  map<string, string> dadosAnim;
+  string input;
+
+  cout << "[---    Atualizar Animal    ---]" << endl;
+  cout << "ANIMAL   : id;classe;nome;tamanho;dieta;veterinario;tratador;batismo;" << endl;
+  cout << "MAMIFERO : cor do pelo;" << endl;
+  cout << "AVE      : evergadura das asas; tamanho do bico;" << endl;
+  cout << "ANFIBIO  : total de mudas; data da ultima muda;" << endl;
+  cout << "REPTIL   : venenoso (sim|nao); tipo de veneno;" << endl;
+  cout << "Digite os dados do animal separados por ;" << endl;
+  getline(cin, input);
+  getline(cin, input);
+
+  dados = split(input, ";");
+
+  dadosAnim = {{"id", dados[0]},
+               {"classe", dados[1]},
+               {"nome", dados[2]},
+               {"tamanho", dados[3]},
+               {"dieta", dados[4]},
+               {"veterinario", dados[5]},
+               {"tratador", dados[6]},
+               {"batismo", dados[7]}};
+
+  if (dados[1].compare("MAMIFERO") == 0)
+  {
+    dadosAnim.insert(pair<string, string>("cor_pelo", dados[8]));
+    m_gerenciador.atualizarMamifero(dadosAnim);
+  }
+  else if (dados[1].compare("AVE") == 0)
+  {
+    dadosAnim.insert(pair<string, string>("envergadura_das_asas", dados[8]));
+    dadosAnim.insert(pair<string, string>("tamanho_do_bico", dados[9]));
+    m_gerenciador.addAve(dadosAnim);
+  }
+  else if (dados[1].compare("ANFIBIO") == 0)
+  {
+    dadosAnim.insert(pair<string, string>("total_mudas", dados[8]));
+    dadosAnim.insert(pair<string, string>("ultima_muda", dados[9]));
+    m_gerenciador.addAnfibio(dadosAnim);
+  }
+  else if (dados[1].compare("REPTIL") == 0)
+  {
+    dadosAnim.insert(pair<string, string>("venenoso", dados[8]));
+    dadosAnim.insert(pair<string, string>("tipo_veneno", dados[9]));
+    m_gerenciador.addReptil(dadosAnim);
+  }
+}
+
 void Entrada::consultar_animal_veterinario()
 {
   int id = 0;
@@ -202,6 +254,7 @@ void Entrada::iniciar()
     cout << "6 - Deletar Animal" << endl;
     cout << "7 - Deletar Funcionario " << endl;
     cout << "8 - Consultar Animal Por Vet Id" << endl;
+    cout << "9 - Atualizar Animal" << endl;
     cout << "[---                      ---]" << endl;
     cout << "Digite uma opção: ";
     cin >> opcao;
@@ -236,6 +289,9 @@ void Entrada::iniciar()
       break;
     case 8:
       consultar_animal_veterinario();
+      break;
+    case 9:
+      atualizar_animal();
       break;
     default:
       return;

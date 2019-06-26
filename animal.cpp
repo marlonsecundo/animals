@@ -315,7 +315,7 @@ int Animal::atualizar()
       {
         nova_tabela << linha << endl;
       }
-      else
+      else if (!linha.empty())
       {
         nova_tabela << linhaAtualizada << endl;
       }
