@@ -1,3 +1,11 @@
+/**
+ * @file ave.cpp
+ * @brief Arquivo que implementa os métodos da classe Ave.
+ * @author Davi César, Emanuel Felipe, João Paulo Carneiro, Lucas Vinicius, Marlon Secundo
+ * @since 28/05/2019
+ * @date 25/06/2019
+ * @version 1.0
+ */
 #include "ave.h"
 
 Ave::Ave(map<string, string> dados) : Animal(dados)
